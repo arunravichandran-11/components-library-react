@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
-/docs-site/node_modules
+/docs-site/node_modules/
 
 .DS_Store
 npm-debug.log*
