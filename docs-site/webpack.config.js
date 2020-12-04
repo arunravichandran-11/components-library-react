@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   context: __dirname,
   entry: './src/index.js',
-  mode: 'development',
-  devtool: 'source-map',
+  // mode: 'development',
+  // devtool: 'source-map',
   module: {
     rules: [
       {
@@ -29,28 +29,7 @@ const config = {
           'css-loader', // Translates CSS into CommonJS
           'sass-loader',
         ],
-        // use: [
-        //   'style-loader', // Creates `style` nodes from JS stringss
-        //   'css-loader', // Translates CSS into CommonJS
-        //   'sass-loader', // Compiles Sass to CSS
-        // ],
       },
-      // {
-      //   test: /\.(png|svg|jpg|gif|jpeg)$/,
-      //   // use: ['file-loader'],
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         // limit: 8192,
-      //       },
-      //     },
-      //   ],
-      // },
-      // {
-      //   test: /\.(svg|eot|woff|woff2|ttf)$/,
-      //   use: ['file-loader'],
-      // },
     ],
   },
   resolve: {
@@ -62,7 +41,6 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     port: 3000,
@@ -70,15 +48,12 @@ const config = {
     open: true,
     publicPath: '/',
     historyApiFallback: true,
-
-    // historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       template: './public/index.html',
     }),
-    // new webpack.HotModuleReplacementPlugin(),
   ],
   // optimization: {
   //   splitChunks: {chunks: 'all'},
