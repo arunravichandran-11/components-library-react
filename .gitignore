@@ -3,5 +3,8 @@
 /docs-site/node_modules/
 /docs-site/build/
 
+/docs-site/dist
+/docs-site/build
+
 .DS_Store
 npm-debug.log*
