@@ -39,7 +39,7 @@ const config = {
     },
   },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, 'build/'),
     filename: 'bundle.js',
   },
   devServer: {
