@@ -7,9 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
-    "build": "webpack --mode=production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack",
+    "prod": "webpack --mode production --config=webpack-prod.config.js"
   },
   "author": "Arun",
   "license": "ISC",
