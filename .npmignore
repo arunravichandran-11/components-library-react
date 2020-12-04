@@ -1,6 +1,7 @@
 node_modules/
 docs-site/
 components
+LICENSE
 src
 public
 webpack.config.js

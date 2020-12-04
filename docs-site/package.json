@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
     "build": "webpack",
+    "ready": "babel components/ -d ../lib --copy-files",
     "prod": "webpack --mode production --config=webpack-prod.config.js"
   },
   "author": "Arun",
@@ -34,6 +35,7 @@
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@webpack-cli/serve": "^1.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.6",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^7.0.0",
