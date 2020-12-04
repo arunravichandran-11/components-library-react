@@ -1,6 +1,8 @@
 import React from 'react';
 import CheckBoxDemoComponent from './Page';
-import CodeBlock from '@tenon-io/tenon-codeblock';
+import file from '!raw-loader!./Page.js';
+
+import CodeBlock from '../../CodeBlock';
 
 class CheckboxDemoPage extends React.Component {
 
@@ -32,7 +34,9 @@ class CheckboxDemoPage extends React.Component {
                         </div>
                     </header>
                     <div>
-                        <CodeBlock file="./src/app/demos/Checkbox/Page.js" />
+                        <CodeBlock>
+                            {file}
+                        </CodeBlock>
                     </div>
                 </div>
                 <div className="example-demo-block">

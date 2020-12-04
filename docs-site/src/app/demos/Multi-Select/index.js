@@ -1,6 +1,7 @@
 import React from 'react';
 import MultiSelectDemoComponent from './Page';
-import CodeBlock from '@tenon-io/tenon-codeblock';
+import CodeBlock from '../../CodeBlock';
+import file from '!raw-loader!./Page.js';
 
 class MultiSelectDemoPage extends React.Component {
 
@@ -33,7 +34,9 @@ class MultiSelectDemoPage extends React.Component {
                         </div>
                     </header>
                     <div>
-                        <CodeBlock file="./src/app/demos/Multi-Select/Page.js" />
+                        <CodeBlock>
+                            {file}
+                        </CodeBlock>
                     </div>
                 </div>
                 <div className="example-demo-block">
