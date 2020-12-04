@@ -1,0 +1,43 @@
+
+  
+  .container {
+      width: 98vw;
+    height: 98vh;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .wrapper {
+    .data-structure {
+      position: absolute;
+      color: white;
+      padding: 10px;
+      background-color: #21252E;
+      box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.4);
+      top: 0px;
+      right: 20px;
+      border-radius: 10px;
+    }
+    .data-structure-button {
+      position: absolute;
+      top: 16px;
+      right: 65px;
+      .actual {
+        position: fixed;
+        box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.4);
+      
+      width: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 100;
+      transition: 0.5s;
+      }
+    }
+  }
