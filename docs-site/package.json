@@ -1,11 +1,14 @@
 {
+  "homepage": "http://arunravichandran-11.github.io/components-library-react",
   "name": "react-component-library",
   "version": "1.0.0",
   "description": "A documentation site for showing how to install and use my react components ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "build": "webpack",
+    "prod": "webpack --mode production --config=webpack-prod.config.js"
   },
   "author": "Arun",
   "license": "ISC",
@@ -32,9 +35,14 @@
     "@webpack-cli/serve": "^1.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "classnames": "^2.2.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^6.3.2",
     "css-loader": "^5.0.1",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
     "prop-types": "^15.7.2",
+    "raw-loader": "^4.0.2",
     "sample-react-lib-by-arun": "^0.4.5",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
