@@ -2,7 +2,7 @@
 /node_modules
 /docs-site/node_modules/
 
-/docs-site/dist/
+/docs-site/dist
 /docs-site/build
 
 .DS_Store
