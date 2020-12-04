@@ -1,7 +1,7 @@
 import React from 'react';
 var classNames = require('classnames');
 import './checkbox.scss';
-import '../Multi-Select/index.scss';
+import PropTypes from 'prop-types';
 
 class CheckboxComponent extends React.Component {
 
@@ -69,7 +69,7 @@ class CheckboxComponent extends React.Component {
 
     render() {
 
-        const { selected, label, onCheck, onUnselect, allSelected, isPartiallySelected, showArrow, hasChild } = this.props;
+        const { selected, label, onCheck, onUnselect, allSelected, isPartiallySelected, hasChild } = this.props;
         const checkboxClass = (selected ? 'fa-check-square' : 'fa-square');
         return (
             <div className="checkbox">
@@ -85,5 +85,14 @@ class CheckboxComponent extends React.Component {
 
   }
 
+  CheckboxComponent.propTypes = {
+    selected: PropTypes.bool,
+    label: PropTypes.string,
+    onCheck: PropTypes.func,
+    onUnselect: PropTypes.func,
+    allSelected: PropTypes.bool, 
+    isPartiallySelected: PropTypes.bool,
+    hasChild: PropTypes.bool
+  };
 
   export default CheckboxComponent;

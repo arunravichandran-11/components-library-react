@@ -1,8 +1,7 @@
-export const familyTree = [
+export const projectTree = [
     {
       name: "Pulse",
       id: "pulse-id",
-      selected: false,
       subOptions: [
         {
           name: "Cosmo",
@@ -17,36 +16,32 @@ export const familyTree = [
         },
         {
           name: "Letura",
-          id: "regular-id",
-          subOptions: [],
+          id: "letura-id",
+          subOptions: [
+          ],
         },
       ]
     },
     {
       name: "Wall Street English",
       id: "wse-id",
-      selected: false,
       subOptions: [
         {
           name: "NSE",
           id: "nse-id",
-          selected: false,
           subOptions: [
             {
               name: "Learning Service",
               id: 'ls-id',
-              selected: false,
               subOptions: [
                 {
                     name: "Digital Classroom",
                     id: 'DC-id',
-                    selected: false,
                     subOptions: [],
                 },
                 {
                     name: "Activity Player",
                     id: 'IAP-id',
-                    selected: false,
                     subOptions: [],
                 },
               ],
@@ -54,14 +49,13 @@ export const familyTree = [
             {
               name: "Teaching Service",
               id: 'ts-id',
-              selected: false,
+              subOptions:[]
             },
           ]
         },
         {
           name: "Marketting",
           id: 'marketting-id',
-          selected: false,
           subOptions: [],
         }
       ]

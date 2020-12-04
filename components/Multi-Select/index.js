@@ -1,5 +1,7 @@
 import React from 'react';
+import './multi-select.scss';
 var classNames = require('classnames');
+import PropTypes from 'prop-types';
 import CheckboxList from '../Checkbox/checkbox-list';
 
   class MultiComponent extends React.Component {  
@@ -37,5 +39,11 @@ import CheckboxList from '../Checkbox/checkbox-list';
        )
     }
   }  
+
+  MultiComponent.propTypes = {
+    data: PropTypes.array,
+    title: PropTypes.string,
+    selectedItems: PropTypes.func,
+  };
 
   export default MultiComponent;

@@ -1,9 +1,8 @@
 import React from 'react';
-import '../Multi-Select/index.scss';
-
+import PropTypes from 'prop-types';
 import CheckboxComponent from './index';
 
-const CheckboxList = ({ options, selectedOptions, onChange, allChecked, debug }) => {
+const CheckboxList = ({ options, selectedOptions, onChange }) => {
 
     const handleCheckboxClicked = (selectedOptionId, option, isSelected) => {
       option.selected = isSelected;
@@ -110,7 +109,6 @@ const CheckboxList = ({ options, selectedOptions, onChange, allChecked, debug })
                                   onChange={(subSelections) => {
                                       handleSubOptionsListChange(option.id, option, subSelections)
                                   }}
-                                  debug={debug}
                               />
                             </ul>
                         }
@@ -122,5 +120,10 @@ const CheckboxList = ({ options, selectedOptions, onChange, allChecked, debug })
     )
   }
   
+  CheckboxList.propTypes = {
+    options: PropTypes.array, 
+    selectedOptions: PropTypes.object, 
+    onChange: PropTypes.func,
+  };
 
   export default CheckboxList;

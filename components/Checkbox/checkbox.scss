@@ -1,11 +1,21 @@
-.arrow {
-    border: solid black;
-    border-width: 0 5px 5px 0;
-    display: inline-block;
-    padding: 5px;
-    margin: 0px 12px;
-    cursor: pointer;
-    transition: transform 0.5s linear;
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+    margin: 10px;
+    &__label {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+    }
+    &__icon {
+      width: 50px;
+      cursor: pointer;
+      color: white;
+      
+    }
 }
 
 .intermediate {
@@ -29,24 +39,4 @@
     border: 1px solid black;
     display: inline-block;
     background-color: #fff;
-}
-  
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-}
-  
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-}
-  
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-}
-  
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
 }
