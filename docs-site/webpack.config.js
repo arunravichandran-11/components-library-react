@@ -35,7 +35,7 @@ const config = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      '@Components': path.join(__dirname, '../components/')
+      '@Components': path.join(__dirname, 'components/')
     },
   },
   output: {
