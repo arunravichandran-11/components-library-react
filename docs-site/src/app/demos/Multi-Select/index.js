@@ -12,7 +12,7 @@ import NestedMultiSelectExampleCode from '!raw-loader!./Examples/NestedOneLevel'
 import DeeplyNestedMultiSelectExample from './Examples/NestedExample';
 import DeeplyNestedMultiSelectExampleCode from '!raw-loader!./Examples/NestedExample.js';
 
-console.log('MultiComponent', MultiComponent.propTypes);
+import PropsDescriptor from '../../PropsDescriptor';
 
 class MultiSelectDemoPage extends React.Component {
 
@@ -29,6 +29,8 @@ class MultiSelectDemoPage extends React.Component {
                 <ComponentRenderer title="DeeplyNestedMultiSelectExample" codeBlock={DeeplyNestedMultiSelectExampleCode}>
                     <DeeplyNestedMultiSelectExample />
                 </ComponentRenderer>
+
+                <PropsDescriptor properties={MultiComponent.propTypes} />
             </div>
         )
     }

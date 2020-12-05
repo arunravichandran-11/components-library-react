@@ -3,6 +3,9 @@ import CheckBoxDemoComponent from './Page';
 import file from '!raw-loader!./Page.js';
 
 import CodeBlock from '../../CodeBlock';
+import PropsDescriptor from '../../PropsDescriptor';
+import CheckboxComponent from '@Components/Checkbox';
+
 
 class CheckboxDemoPage extends React.Component {
 
@@ -42,6 +45,8 @@ class CheckboxDemoPage extends React.Component {
                 <div className="example-demo-block">
                     <CheckBoxDemoComponent />
                 </div>
+
+                <PropsDescriptor properties={CheckboxComponent.propTypes}/>
             </div>
         )
     }
