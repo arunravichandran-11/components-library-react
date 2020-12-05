@@ -14,7 +14,7 @@ import CheckboxWithLabelAlignmentExample from './Examples/CheckboxWithLabelAlign
 import CheckboxWithLabelAlignmentExampleCode from '!raw-loader!./Examples/CheckboxWithLabelAlignment';
 
 
-import ComponentRenderer from './ComponentRenderer';
+import ComponentRenderer from '../../ComponentRenderer';
 
 class CheckboxDemoPage extends React.Component {
 
@@ -23,16 +23,16 @@ class CheckboxDemoPage extends React.Component {
         const propsNotes = `onUnselect, allSelected, isPartiallySelected and hasChild - these props are used internally in Checkboxlist Component which is used in multi select component`;
         return (
             <div>
-                <h2>CheckBox Component</h2>
+                <h2>Examples</h2>
                 <ComponentRenderer title="Simple Checkbox" codeBlock={SimpleCheckboxExampleCode}>
                     <SimpleCheckboxExample />
                 </ComponentRenderer>
 
-                <ComponentRenderer title="CheckBox With Label(Horizontal)" codeBlock={CheckboxWithLabelExampleCode}>
+                <ComponentRenderer title="CheckBox With Label (Horizontal)" codeBlock={CheckboxWithLabelExampleCode}>
                     <CheckboxWithLabelExample />
                 </ComponentRenderer>
 
-                <ComponentRenderer title="CheckBox With Label(Vertical)" codeBlock={CheckboxWithLabelAlignmentExampleCode}>
+                <ComponentRenderer title="CheckBox With Label (Vertical)" codeBlock={CheckboxWithLabelAlignmentExampleCode}>
                     <CheckboxWithLabelAlignmentExample />
                 </ComponentRenderer>
 

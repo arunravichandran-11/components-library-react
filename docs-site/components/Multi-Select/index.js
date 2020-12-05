@@ -1,16 +1,14 @@
 import React from 'react';
 import './multi-select.scss';
-var classNames = require('classnames');
-import PropTypes from 'prop-types';
 import CheckboxList from '../Checkbox/checkbox-list';
+import PropTypes from 'prop-types';
 
-  class MultiComponent extends React.Component {  
+class MultiSelectComponent extends React.Component {  
     constructor(props){
       super(props)
       this.state = {
         selectedOptions: {},
         selectedItems: {},
-        codeShowing: false
       }
     }
 
@@ -27,8 +25,8 @@ import CheckboxList from '../Checkbox/checkbox-list';
       
       return (
 
-          <div>
-             <h2>{title}</h2>
+          <div className="multi-select-container">
+             <h2 className="title">{title}</h2>
 
              <CheckboxList
                options={data} 
@@ -38,12 +36,12 @@ import CheckboxList from '../Checkbox/checkbox-list';
            </div>
        )
     }
-  }  
+}  
 
-  MultiComponent.propTypes = {
-    data: PropTypes.array,
-    title: PropTypes.string,
-    selectedItems: PropTypes.func,
-  };
+MultiSelectComponent.propTypes = {
+  data: PropTypes.array,
+  title: PropTypes.string,
+  selectedItems: PropTypes.func,
+};
 
-  export default MultiComponent;
+export default MultiSelectComponent;

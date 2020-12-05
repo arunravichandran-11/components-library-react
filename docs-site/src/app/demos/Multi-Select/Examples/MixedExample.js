@@ -1,5 +1,6 @@
 import React from 'react';
-import MultiComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+
 import CodeBlock from '../../../CodeBlock';
 
 const languageTree = [
@@ -92,7 +93,7 @@ class MixedMultiSelectExample extends React.Component {
     render() {
         return (
             <div>
-                <MultiComponent title="Projects" data={languageTree} selectedItems={this.getSelected}/>
+                <MultiSelectComponent title="Frameworks" data={languageTree} selectedItems={this.getSelected}/>
 
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 

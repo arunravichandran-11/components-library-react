@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 import CodeBlock from '../../../CodeBlock';
 
 const projectTree = [
@@ -80,7 +80,7 @@ class DeeplyNestedMultiSelectExample extends React.Component {
     render() {
         return (
             <div>
-                <MultiComponent title="Projects" data={projectTree} selectedItems={this.getSelected}/>
+                <MultiSelectComponent title="Projects" data={projectTree} selectedItems={this.getSelected}/>
 
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 

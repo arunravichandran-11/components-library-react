@@ -4,14 +4,16 @@ import CheckboxComponent from 'sample-react-lib-by-arun/lib/Checkbox';
 class CheckboxWithLabelExample extends React.Component {
 
     state = {
-        selected: false,
+        travel: false,
+        trekking: true,
     }
     render() {
         return (
             <div>
+                <CheckboxComponent label="Travel" selected={this.state.travel} onCheck={(selected) => this.setState({travel: selected})} />
                 <CheckboxComponent label="bike" selected={false} />
                 <CheckboxComponent label="trip" selected={true} />
-                <CheckboxComponent label="Trekking" selected={this.state.selected} onCheck={(selected) => this.setState({selected})} />
+                <CheckboxComponent label="Trekking" selected={this.state.trekking} onCheck={(selected) => this.setState({trekking: selected})} />
             </div>
         )
     }
