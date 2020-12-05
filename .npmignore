@@ -4,6 +4,7 @@ components
 LICENSE
 src
 public
+README.md
 webpack.config.js
 .babelrc
 package-lock.json
