@@ -43,19 +43,16 @@ const InstallationGuide = () => {
                             git clone https://github.com/arunravichandran-11/components-library-react.git
                         </p>
                         <p>
-                            cd components-library-react/
+                            cd components-library-react/docs-site
                         </p>
                         <p>
                             npm install
                         </p>
                         <p>
-                            cd docs-site/
+                            npm start [development]
                         </p>
                         <p>
-                            npm install
-                        </p>
-                        <p>
-                            npm start
+                            npm run prod [Production]
                         </p>
                     </CodeBlock>
 
