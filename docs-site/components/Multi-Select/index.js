@@ -13,6 +13,14 @@ import CheckboxList from '../Checkbox/checkbox-list';
         codeShowing: false
       }
     }
+
+    handleCheckListChange = (selectedOptions, selectedItems) => {
+      this.setState({selectedItems});
+
+      if(this.props.selectedItems) {
+        this.props.selectedItems({selectedItems});
+      }
+    }
     
     render() {
       const {data, title} = this.props;
@@ -20,19 +28,11 @@ import CheckboxList from '../Checkbox/checkbox-list';
       return (
 
           <div>
-             <h1>{title}</h1>
+             <h2>{title}</h2>
 
              <CheckboxList
                options={data} 
-               onChange={(selectedOptions, selectedItems) => {
-
-                this.setState({selectedItems});
-
-                if(this.props.selectedItems) {
-                  this.props.selectedItems({selectedItems});
-                }
-                
-               }}
+               onChange={this.handleCheckListChange}
                selectedOptions={this.state.selectedItems} 
               />
            </div>
