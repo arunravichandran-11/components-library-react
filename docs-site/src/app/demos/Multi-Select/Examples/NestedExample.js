@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiComponent from '@Components/Multi-Select';
+import MultiComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 import CodeBlock from '../../../CodeBlock';
 
 const projectTree = [
