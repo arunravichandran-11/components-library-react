@@ -4,6 +4,34 @@ import CodeBlock from '../../../CodeBlock';
 
 const languageTree = [
     {
+        name: "Java Frameworks",
+        id: "java-id",
+        subOptions: [
+        ]
+    },
+    {
+        name: "CSS Frameworks",
+        id: "css-id",
+        subOptions: [
+            {
+                name: "bootstrap",
+                id: "bos-id",
+            },
+            {
+                name: "foundation",
+                id: "foud-id",
+            },
+            {
+                name: "Materialize",
+                id: "matl-id",
+            },
+            {
+                name: "Pure",
+                id: "pure-id",
+            }
+        ]
+    },
+    {
         name: "JavaScript Frameworks",
         id: "JS-id",
         subOptions: [
@@ -30,20 +58,6 @@ const languageTree = [
         ]
     },
     {
-        name: "Java Frameworks",
-        id: "java-id",
-        subOptions: [
-            {
-                name: "Spring",
-                id: "java-sp-id",
-            },
-            {
-                name: "Hibernate",
-                id: "java-hib-id",
-            },
-        ]
-    },
-    {
         name: "Python",
         id: "py-id",
         subOptions: [
@@ -60,24 +74,10 @@ const languageTree = [
     {
         name: "C# Framework",
         id: "cpp-id",
-        subOptions: [
-            {
-                name: "ASP .NET",
-                id: "cpp-an-id",
-            },
-            {
-                name: ".NET CORE",
-                id: "cpp-re-id",
-            },
-            {
-                name: "ADO.NET",
-                id: "cpp-vu-id",
-            },
-        ]
     },
 ];
 
-class NestedMultiSelectExample extends React.Component {
+class MixedMultiSelectExample extends React.Component {
 
     state = {
         selectedItems: null,
@@ -106,4 +106,4 @@ class NestedMultiSelectExample extends React.Component {
     }
 }
 
-export default NestedMultiSelectExample;
+export default MixedMultiSelectExample;

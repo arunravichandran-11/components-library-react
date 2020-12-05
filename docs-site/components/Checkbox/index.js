@@ -15,7 +15,9 @@ class CheckboxComponent extends React.Component {
      * @param {object} event 
      */
     handleClick = (event) => {
-        this.props.onCheck(!this.props.selected);
+        if(this.props.onCheck) {
+            this.props.onCheck(!this.props.selected);
+        }
     };
 
     /**
@@ -69,10 +71,12 @@ class CheckboxComponent extends React.Component {
 
     render() {
 
-        const { selected, label, onCheck, onUnselect, allSelected, isPartiallySelected, hasChild } = this.props;
+        const { selected, label, align, onCheck, onUnselect, allSelected, isPartiallySelected, hasChild } = this.props;
         const checkboxClass = (selected ? 'fa-check-square' : 'fa-square');
+
+        const containerClass = (`checkbox ${align || ''}`).trim();
         return (
-            <div className="checkbox">
+            <div className={containerClass}>
                 {hasChild && this.renderToggleIcons()}
                 {!hasChild && <div 
                         className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} 
