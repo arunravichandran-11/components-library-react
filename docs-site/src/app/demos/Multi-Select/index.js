@@ -1,47 +1,34 @@
 import React from 'react';
-import MultiSelectDemoComponent from './Page';
-import CodeBlock from '../../CodeBlock';
-import file from '!raw-loader!./Page.js';
+import ComponentRenderer from './ComponentRenderer';
+
+import MultiComponent from '@Components/Multi-Select';
+
+import SimpleMultiSelectExample from './Examples/SimpleExample';
+import SimpleMultiSelectExampleCode from '!raw-loader!./Examples/SimpleExample.js';
+
+import NestedMultiSelectExample from './Examples/NestedOneLevel';
+import NestedMultiSelectExampleCode from '!raw-loader!./Examples/NestedOneLevel';
+
+import DeeplyNestedMultiSelectExample from './Examples/NestedExample';
+import DeeplyNestedMultiSelectExampleCode from '!raw-loader!./Examples/NestedExample.js';
+
+console.log('MultiComponent', MultiComponent.propTypes);
 
 class MultiSelectDemoPage extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state={
-            showCode: false
-        }
-    }
-
-
-    expandCodeBlock = () => {
-        this.setState({
-            showCode: !this.state.showCode
-        })
-    }
-
     render() {
-
-        const showBlockClassName = `code-block ${this.state.showCode ? `expand` : 'shrink'}`;
-
         return (
             <div>
                 <h2>MultiSelect Component</h2>
-                <div className={showBlockClassName}>
-                    <header>
-                        <div>Code Block</div>
-                        <div onClick={this.expandCodeBlock} className="icon-button">
-                            <i className="fa fa-code" aria-hidden="true"></i>
-                        </div>
-                    </header>
-                    <div>
-                        <CodeBlock>
-                            {file}
-                        </CodeBlock>
-                    </div>
-                </div>
-                <div className="example-demo-block">
-                    <MultiSelectDemoComponent />
-                </div>
+                <ComponentRenderer title="SimpleMultiSelectExample" codeBlock={SimpleMultiSelectExampleCode}>
+                    <SimpleMultiSelectExample />
+                </ComponentRenderer>
+                <ComponentRenderer title="NestedMultiSelectExample" codeBlock={NestedMultiSelectExampleCode}>
+                    <NestedMultiSelectExample />
+                </ComponentRenderer>
+                <ComponentRenderer title="DeeplyNestedMultiSelectExample" codeBlock={DeeplyNestedMultiSelectExampleCode}>
+                    <DeeplyNestedMultiSelectExample />
+                </ComponentRenderer>
             </div>
         )
     }
