@@ -1,7 +1,10 @@
 # components-library-react
 
+### Documentation Site: [(https://arun-ravichandran-1101.netlify.app/)] 
 > This is a simple react component library with two components[MultiSelect and Checkbox] and it can be integrated with any react application.
-## Usage
+
+
+<!-- ## Usage
 1. Install it using npm `npm i sample-react-lib-by-arun --save-dev`.
 2. After installing, you can find `sample-react-lib-by-arun` folder inside node_modules
 3. Font awesome min css is used inside component for UI. Make sure to include it as cdn.
@@ -24,4 +27,4 @@
 	}
 
 	export default App;
-```
+``` -->
