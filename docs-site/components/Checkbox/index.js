@@ -1,7 +1,7 @@
 import React from 'react';
-var classNames = require('classnames');
 import './checkbox.scss';
 import PropTypes from 'prop-types';
+var classNames = require('classnames');
 
 class CheckboxComponent extends React.Component {
 
@@ -35,7 +35,7 @@ class CheckboxComponent extends React.Component {
      */
     renderCheckBox() {
         if(this.props.allSelected) {
-            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square-o')} onClick={this.unCheckAll}></div>
+            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square')} onClick={this.unCheckAll}></div>
         } else if(this.props.isPartiallySelected) {
             return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-pencil-square-o')}></div>
         } else {
@@ -51,7 +51,7 @@ class CheckboxComponent extends React.Component {
     renderToggleIcons() {
         if(this.props.selected) {
             if(this.props.allSelected) {
-                return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square-o')} onClick={this.unCheckAll}></div>
+                return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square')} onClick={this.unCheckAll}></div>
             } else if(this.props.isPartiallySelected) {
                 return <div className={classNames('checkbox__icon')} onClick={this.unCheckAll}>
                     <div className="intermediate">
@@ -71,17 +71,14 @@ class CheckboxComponent extends React.Component {
 
     render() {
 
-        const { selected, label, align, onCheck, onUnselect, allSelected, isPartiallySelected, hasChild } = this.props;
-        const checkboxClass = (selected ? 'fa-check-square' : 'fa-square');
+        const { selected, label, align, hasChild } = this.props;
+        const checkboxClass = (selected ? 'fa-check-square-o' : 'fa-square-o');
 
         const containerClass = (`checkbox ${align || ''}`).trim();
         return (
             <div className={containerClass}>
                 {hasChild && this.renderToggleIcons()}
-                {!hasChild && <div 
-                        className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} 
-                        onClick={this.handleClick}>
-                    </div>}
+                {!hasChild && <div className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} onClick={this.handleClick}></div>}
                 <div className="checkbox__label">{label}</div>
             </div>
         )

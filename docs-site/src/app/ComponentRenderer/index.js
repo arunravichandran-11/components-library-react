@@ -1,7 +1,7 @@
 import React from 'react';
-import CodeBlock from '../../CodeBlock';
+import CodeBlock from '../CodeBlock';
 
-class CheckboxExampleRenderer extends React.Component {
+class ComponentRenderer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,19 +21,25 @@ class CheckboxExampleRenderer extends React.Component {
 
         const showBlockClassName = `code-block ${this.state.showCode ? `expand` : 'shrink'}`;
 
+        const showClassName = `code-block-wrapper ${this.state.showCode ? `expand` : 'shrink'}`;
+
         const rootElementStyle = {
-            margin: '16px 0px',
+            margin: '32px 0px',
         }
         return (
             <div style={rootElementStyle}>
                 <div className={showBlockClassName}>
                     <header>
                         <div>Code Block - {this.props.title}</div>
-                        <div onClick={this.expandCodeBlock} className="icon-button">
-                            <i className="fa fa-code" aria-hidden="true"></i>
+                        <div>
+                            <div onClick={this.expandCodeBlock} className="icon-button">
+                                <i className="fa fa-code" aria-hidden="true"></i>
+                                <span className="tooltip">Source Code</span>
+                            </div>
+                            {/* <span>Click to expand</span> */}
                         </div>
                     </header>
-                    <div>
+                    <div className={showClassName}>
                         <CodeBlock>
                             {this.props.codeBlock}
                         </CodeBlock>
@@ -47,4 +53,4 @@ class CheckboxExampleRenderer extends React.Component {
     }
 }
 
-export default CheckboxExampleRenderer;
+export default ComponentRenderer;

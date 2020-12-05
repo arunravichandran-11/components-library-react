@@ -1,7 +1,7 @@
 
 .props-table-container {
     .short-notes {
-        font-style: italic;
+        // font-style: italic;
         background-color: #ddd;
         padding: 8px;
         border-radius: 8px;
@@ -25,9 +25,12 @@
     
         th {
             color: #ff7846;
+            font-weight: normal;
         }
         th, td {
             padding: 1em;
+            font-size: 1rem;
+            font-weight: normal;
         }
     }
 }

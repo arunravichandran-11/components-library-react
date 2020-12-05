@@ -1,7 +1,7 @@
 import React from 'react';
-import ComponentRenderer from './ComponentRenderer';
+import ComponentRenderer from '../../ComponentRenderer';
 
-import MultiComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 
 import SimpleMultiSelectExample from './Examples/SimpleExample';
 import SimpleMultiSelectExampleCode from '!raw-loader!./Examples/SimpleExample.js';
@@ -23,21 +23,21 @@ class MultiSelectDemoPage extends React.Component {
     render() {
         return (
             <div>
-                <h2>MultiSelect Component</h2>
+                <h2>Examples</h2>
                 <ComponentRenderer title="Simple Multi Select Example" codeBlock={SimpleMultiSelectExampleCode}>
                     <SimpleMultiSelectExample />
                 </ComponentRenderer>
                 <ComponentRenderer title="Nested Multi Select Example" codeBlock={NestedMultiSelectExampleCode}>
                     <NestedMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="Multi Select With Nested and Single Checkbox" codeBlock={MixedMultiSelectExampleCode}>
+                <ComponentRenderer title="Multi Select with single and multi level nested Checkbox" codeBlock={MixedMultiSelectExampleCode}>
                     <MixedMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="DeeplyNestedMultiSelectExample" codeBlock={DeeplyNestedMultiSelectExampleCode}>
+                <ComponentRenderer title="Deeply Nested MultiSelect Example" codeBlock={DeeplyNestedMultiSelectExampleCode}>
                     <DeeplyNestedMultiSelectExample />
                 </ComponentRenderer>
 
-                <PropsDescriptor properties={MultiComponent.propTypes} />
+                <PropsDescriptor properties={MultiSelectComponent.propTypes} />
             </div>
         )
     }

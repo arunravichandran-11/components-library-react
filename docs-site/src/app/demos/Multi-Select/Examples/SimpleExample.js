@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 
 import CodeBlock from '../../../CodeBlock';
 
@@ -41,7 +41,7 @@ class SimpleMultiSelectExample extends React.Component {
     render() {
         return (
             <div>
-                <MultiComponent title="Programming Languages" data={languageTree} selectedItems={this.getSelected}/>
+                <MultiSelectComponent title="Programming Languages" data={languageTree} selectedItems={this.getSelected}/>
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 
                 {this.state.selectedItems &&

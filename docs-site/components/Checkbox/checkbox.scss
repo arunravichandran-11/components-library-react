@@ -3,45 +3,38 @@
     display: inline-flex;
     align-items: center;
     position: relative;
-    padding-left: 40px;
-    margin: 10px;
+    margin: 8px;
+    cursor: pointer;
     &.vertical {
       display: flex;
+      margin: 16px 8px;
     }
     &.horizontal {
       display: inline-flex;
     }
     &__label {
-      font-size: 24px;
-      font-weight: 700;
-      color: white;
+      font-size: 16px;
+      padding-left: 40px;
+      color: black;
     }
     &__icon {
-      width: 50px;
+      position: absolute;
+      width: 100%;
       cursor: pointer;
-      color: white;
+      color: rgba(0, 0, 0, 0.6);
     }
-}
-
-.intermediate {
-    border: 1px solid black;
-    width: 25px;
-    height: 23px;
-    font-size: 2em;
-    border-radius: 6px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .fa-square {
-        font-size: 16px;
-    }
-}
-
-.fill-box {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-    display: inline-block;
-    background-color: #fff;
+    .intermediate {
+      border: 1px solid black;
+      width: 25px;
+      height: 23px;
+      font-size: 2em;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .fa-square {
+          font-size: 16px;
+      }
+   }
 }

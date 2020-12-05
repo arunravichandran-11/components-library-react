@@ -9,6 +9,14 @@ import InstallationGuide from './Installation';
 
 class App extends React.Component { 
 
+    state = {
+        showDrawer: false,
+    }
+
+    toggleDrawer = () => {
+        this.setState({showDrawer: !this.state.showDrawer});
+    }
+
     render() {
         const activeLinkStyle = {
             backgroundColor: 'rgba(0,0,0,0.4)'
@@ -17,14 +25,25 @@ class App extends React.Component {
             <Router>
                 <div className="app-container">
 
-                <header>
-                    <h3>Components Library</h3>
-                    <a href="https://github.com/arunravichandran-11/components-library-react/" target="_blank">
-                        Github
+                <header className="app-header">
+                    <h3 className="title">
+                        <NavLink to="/" className="home">
+                            <i className="fa fa-home" aria-hidden="true"></i>
+                            <span>React Library</span>
+                        </NavLink>
+                        <a className="menu" onClick={this.toggleDrawer}>
+                            <i className={this.state.showDrawer ? 'fa fa-times' : 'fa fa-bars'} aria-hidden="true"></i>
+                            <span>React Library</span>
+
+                        </a>
+                    </h3>
+                    <a className="github-link" href="https://github.com/arunravichandran-11/components-library-react/" target="_blank">
+                        <i className="fa fa-github" aria-hidden="true"></i> Github
+                        <span className="tooltip">Open Source Code</span>
                     </a>
                 </header>
                 <div className="wrapper">
-                    <div className="left-pane">
+                    <div className={this.state.showDrawer ? 'left-pane drawer' : 'left-pane'}>
                         <ul>
                             <li>
                                 <NavLink activeStyle={activeLinkStyle} to="/select">MultiSelect</NavLink>
@@ -34,6 +53,7 @@ class App extends React.Component {
                             </li>
                         </ul>
                     </div>
+                    <div className="overlay" onClick={this.toggleDrawer}></div>
                     <div className="right-pane">
                         <Switch>
                             <Route path="/" exact>
