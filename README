@@ -9,6 +9,7 @@
 ### 4. react, react-dom, prop-types and classnames are peer dependencies for this plugin. 
 > Note: The fontawesome dependency will be removed soon. 
 
+
 ## Example Usage:
 ```
 import React from 'react';
