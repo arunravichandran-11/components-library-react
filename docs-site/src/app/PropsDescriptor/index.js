@@ -8,7 +8,7 @@ const PropsDescriptor = (props) => {
     });
 
     return (
-        <PropTableComponent propTypes={modifiedPropsObject} />
+        <PropTableComponent propTypes={modifiedPropsObject} {...props} />
     )
 }
 

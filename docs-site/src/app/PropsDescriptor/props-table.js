@@ -11,20 +11,26 @@ const getRows = propTypes => Object.keys(propTypes).map(prop => (
   </tr>
 ));
 
-const PropTableComponent = ({ propTypes }) => {
+const PropTableComponent = ({ propTypes, notes }) => {
     return (
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>isRequired?</th>
-      </tr>
-    </thead>
-    <tbody>
-      {getRows(propTypes)}
-    </tbody>
-  </table>
+      <div className="props-table-container">
+        <h2>Component Props</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>isRequired?</th>
+            </tr>
+          </thead>
+          <tbody>
+            {getRows(propTypes)}
+          </tbody>
+        </table>
+        {
+          notes && <p className="short-notes">Note: {notes}</p>
+        }
+      </div>
 )
     };
 
