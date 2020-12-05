@@ -8,6 +8,6 @@
 lib
 lib/
 
-README.md
+README
 .DS_Store
 npm-debug.log*
