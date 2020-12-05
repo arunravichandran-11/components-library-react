@@ -42,7 +42,6 @@ class SimpleMultiSelectExample extends React.Component {
         return (
             <div>
                 <MultiComponent title="Programming Languages" data={languageTree} selectedItems={this.getSelected}/>
-
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 
                 {this.state.selectedItems &&

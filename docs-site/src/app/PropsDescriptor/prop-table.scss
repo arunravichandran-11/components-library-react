@@ -1,0 +1,25 @@
+
+table {
+    background: #34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+
+    thead, tbody {
+        text-align: left;
+    }
+
+    tr {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        color: #ff7846;
+    }
+    th, td {
+        padding: 1em;
+    }
+}
