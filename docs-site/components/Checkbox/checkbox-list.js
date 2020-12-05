@@ -93,14 +93,14 @@ const CheckboxList = ({ options, selectedOptions, onChange }) => {
                             label={option.name}
                             allSelected={option.isAllSelected}
                             isPartiallySelected={option.isPartiallySelected}
-                            hasChild={option.subOptions.length > 0}
+                            hasChild={option.subOptions ? option.subOptions.length > 0 : false}
                             onUnselect={(unselectStatus) => handleUnseletAll(unselectStatus, option, option.id)}
                             onCheck={(isSelected) => {
                               handleCheckboxClicked(option.id, option, isSelected);
                             }}
                         />
                         {
-                            (option.subOptions.length > 0 && option.selected) &&
+                            (option.subOptions && option.subOptions.length > 0 && option.selected) &&
                             <ul>
                               <CheckboxList 
                                   options={option.subOptions}

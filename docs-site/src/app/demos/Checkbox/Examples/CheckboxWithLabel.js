@@ -1,6 +1,6 @@
 import React from 'react';
 import MultiComponent from '@Components/Multi-Select';
-import CodeBlock from '../../CodeBlock';
+import CodeBlock from '../../../CodeBlock';
 
 const projectTree = [
   {
@@ -14,7 +14,6 @@ const projectTree = [
           {
               name: "My_pedia",
               id: "my-pedia-id",
-              subOptions: [],
           },
         ],
       },
@@ -66,7 +65,7 @@ const projectTree = [
   },
 ];
 
-class MultiSelectDemoComponent extends React.Component {
+class DeeplyNestedMultiSelectExample extends React.Component {
 
     state = {
         selectedItems: null,
@@ -82,6 +81,9 @@ class MultiSelectDemoComponent extends React.Component {
         return (
             <div>
                 <MultiComponent title="Projects" data={projectTree} selectedItems={this.getSelected}/>
+
+                {/* Note: The below codeblock is used only for displaying the selected data. */}
+
                 {this.state.selectedItems &&
                 <CodeBlock>
                  { JSON.stringify(this.state.selectedItems, null, 3) }
@@ -92,4 +94,4 @@ class MultiSelectDemoComponent extends React.Component {
     }
 }
 
-export default MultiSelectDemoComponent;
+export default DeeplyNestedMultiSelectExample;
