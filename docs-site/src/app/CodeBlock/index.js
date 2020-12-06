@@ -6,7 +6,7 @@ class CodeBlock extends React.Component {
         return (
             <div className="code-block-container">
                 <pre>
-                        <code language="js">
+                        <code language="language-html">
                             {this.props.children}
                         </code>
                 </pre>

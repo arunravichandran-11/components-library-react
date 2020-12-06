@@ -1,5 +1,7 @@
 import React from 'react';
 import CodeBlock from '../CodeBlock';
+import './component-renderer.scss';
+import TooltipComponent from '@Components/Tooltip';
 
 class ComponentRenderer extends React.Component {
 
@@ -27,14 +29,14 @@ class ComponentRenderer extends React.Component {
             margin: '32px 0px',
         }
         return (
-            <div style={rootElementStyle}>
+            <div style={rootElementStyle} className="component-renderer-root">
                 <div className={showBlockClassName}>
                     <header>
                         <div>Code Block - {this.props.title}</div>
                         <div>
                             <div onClick={this.expandCodeBlock} className="icon-button">
                                 <i className="fa fa-code" aria-hidden="true"></i>
-                                <span className="tooltip">Source Code</span>
+                                <TooltipComponent position="top" text="Source Code"/>
                             </div>
                             {/* <span>Click to expand</span> */}
                         </div>
