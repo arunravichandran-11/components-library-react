@@ -1,0 +1,27 @@
+.list-container {
+    .list {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        .list-item {
+            line-height: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+    
+            a {
+                color: black;
+                padding: 8px 16px;
+                text-decoration: none;
+                display: inline-block;
+                line-height: 40px;
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 0.5;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+}

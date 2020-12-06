@@ -10,7 +10,7 @@ class DrawerComponent extends React.Component {
         return (
             <div className={rootElementClass}>
                 <div className="drawer-wrap">
-                    <a onClick={(event) => this.props.onClose(event)}><i className="fa fa-2x fa-close"></i></a>
+                    <a className="header-icon" onClick={(event) => this.props.onClose(event)}><i className="fa fa-2x fa-close"></i></a>
                     {children}
                 </div>
             </div>

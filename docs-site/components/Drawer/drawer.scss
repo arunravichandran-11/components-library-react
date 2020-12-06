@@ -1,5 +1,4 @@
 .drawer-component-container {
-    // display: none;
     &.open-drawer {
         display: flex;
         .drawer-wrap {
@@ -24,36 +23,22 @@
             top: 0;
             left: 0;
         }
-        a {
+        .header-icon {
             display: inline-block;
-            padding: 8px;
+            height: 56px;
+            line-height: 56px;
         }
-    }   
+    } 
+    
+    .drawer-wrap {
+        .list-container {
+            .list {
+                .list-item {
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
-
-
-// ul {
-//     margin: 0;
-//     list-style: none;
-//     padding: 0;
-//     li {
-//         line-height: 40px;
-//         cursor: pointer;
-//         font-size: 16px;
-//         font-family: 'Roboto', sans-serif;
-
-//         a {
-//             color: #fff;
-//             padding: 8px 16px;
-//             text-decoration: none;
-//             display: inline-block;
-//             line-height: 40px;
-//             width: 100%;
-//             box-sizing: border-box;
-//             letter-spacing: 0.5;
-//         }
-//         &:hover {
-//             background-color: rgba(0, 0, 0, 0.3);
-//         }
-//     }
-// }

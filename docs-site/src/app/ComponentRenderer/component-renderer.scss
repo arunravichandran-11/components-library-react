@@ -37,12 +37,6 @@
             border-color: #ff7846;
             background-color: #ff7846;
             cursor: pointer;
-    
-            &:hover {
-                & > .tooltip {
-                    opacity: 1;
-                }
-            }
         }
         i {
             color: #fff;
