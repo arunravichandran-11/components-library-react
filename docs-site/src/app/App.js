@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-do
 
 import './app.scss';
 
+import DrawerComponent from '@Components/Drawer';
+
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import InstallationGuide from './Installation';
@@ -43,7 +45,9 @@ class App extends React.Component {
                     </a>
                 </header>
                 <div className="wrapper">
-                    <div className={this.state.showDrawer ? 'left-pane drawer' : 'left-pane'}>
+                    <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}/>
+                    {/* <div className={this.state.showDrawer ? 'left-pane drawer' : 'left-pane'}>
+                    <DrawerComponent />
                         <ul>
                             <li>
                                 <NavLink activeStyle={activeLinkStyle} to="/select">MultiSelect</NavLink>
@@ -52,8 +56,8 @@ class App extends React.Component {
                                 <NavLink activeStyle={activeLinkStyle} to="/checkbox">Checkbox</NavLink>
                             </li>
                         </ul>
-                    </div>
-                    <div className="overlay" onClick={this.toggleDrawer}></div>
+                    </div> */}
+                    <div className={this.state.showDrawer ? 'overlay show' : 'overlay'} onClick={this.toggleDrawer}></div>
                     <div className="right-pane">
                         <Switch>
                             <Route path="/" exact>

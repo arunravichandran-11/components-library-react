@@ -1,0 +1,67 @@
+.component-renderer-root {
+
+    .example-demo-block {
+        padding: 8px;
+        width: 100%;
+        overflow: auto;
+    }
+    .code-block {
+        height: auto;
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+        overflow: visible;
+        background-color: #ddd;
+        margin: 8px 0px;
+    
+        .code-block-wrapper {
+            overflow: hidden;
+            &.expand {
+                height: auto;
+            }
+            &.shrink {
+                height: 0;
+            }
+        
+        }
+    
+        .icon-button {
+            flex: 0 0 auto;
+            padding: 6px;
+            overflow: visible;
+            font-size: 24px;
+            text-align: center;
+            position: relative;
+            transition: #ff7846 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            border-radius: 50%;
+            border-color: #ff7846;
+            background-color: #ff7846;
+            cursor: pointer;
+    
+            &:hover {
+                & > .tooltip {
+                    opacity: 1;
+                }
+            }
+        }
+        i {
+            color: #fff;
+            border-color: #ff7846;
+            background-color: #ff7846;
+            font-size: 24px;
+    
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 24px;
+            box-sizing: border-box;
+            height: 48px;
+            * {
+                color: white;
+            }
+        }
+    }
+    
+}

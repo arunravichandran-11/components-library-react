@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../CodeBlock';
+import './component-renderer.scss';
 
 class ComponentRenderer extends React.Component {
 
@@ -27,7 +28,7 @@ class ComponentRenderer extends React.Component {
             margin: '32px 0px',
         }
         return (
-            <div style={rootElementStyle}>
+            <div style={rootElementStyle} className="component-renderer-root">
                 <div className={showBlockClassName}>
                     <header>
                         <div>Code Block - {this.props.title}</div>
