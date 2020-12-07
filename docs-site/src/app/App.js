@@ -8,6 +8,7 @@ import ListComponent from '@Components/List/list';
 import ListItemLink from '@Components/List/list-item-link';
 import TooltipComponent from '@Components/Tooltip';
 
+import AnimatedMultiSelectDemoPage from './demos/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import InstallationGuide from './Installation';
@@ -48,6 +49,7 @@ class App extends React.Component {
                             <ListComponent>
                                 <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
+                                <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
                             </ListComponent>
                         </DrawerComponent>
                         <div className={this.state.showDrawer ? 'overlay show' : 'overlay'} onClick={this.toggleDrawer} onClose={this.toggleDrawer}></div>
@@ -60,6 +62,9 @@ class App extends React.Component {
                                 </Route>
                                 <Route path="/select">
                                     <MultiSelectDemoPage />
+                                </Route>
+                                <Route path="/multi-select">
+                                    <AnimatedMultiSelectDemoPage />
                                 </Route>
                                 <Route path="/checkbox">
                                     <CheckboxDemoPage />
