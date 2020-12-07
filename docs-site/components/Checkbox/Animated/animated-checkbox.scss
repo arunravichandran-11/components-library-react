@@ -54,6 +54,21 @@
         padding-left: 16px;
     }
 
+    .check-box.show-child {
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18px;
+            height: 0px;
+            display: inline-block;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
+
     .check-box.indeterminate {
 
         span {

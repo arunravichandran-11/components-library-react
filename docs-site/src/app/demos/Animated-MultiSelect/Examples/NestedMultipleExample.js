@@ -1,5 +1,7 @@
 import React from 'react';
-import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
+// import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
+
+import AnimatedMultiSelectComponent from '@Components/Multi-Select/Animated';
 
 import CodeBlock from '../../../CodeBlock';
 
@@ -11,6 +13,40 @@ const frameworkTree = [
           {
               name: "Angular",
               id: "JS-an-id",
+              subOptions: [
+                {
+                    name: "AngualrJS",
+                    id: "ng-id",
+                    subOptions: [
+                        {
+                            name: "Version-1",
+                            id: "ng-v-1-id",
+                            subOptions: []
+                        },
+                        {
+                            name: "Version-2",
+                            id: "ng-v-2-id",
+                            subOptions: []
+                        }
+                    ]
+                },
+                {
+                    name: "Angular2+",
+                    id: "a2+-id",
+                    subOptions: [
+                        {
+                            name: "Version-7",
+                            id: "ng-7-id",
+                            subOptions: []
+                        },
+                        {
+                            name: "Version-9",
+                            id: "ng-9-id",
+                            subOptions: []
+                        }
+                    ]
+                }
+              ]
           },
           {
               name: "React",
