@@ -24,16 +24,18 @@ class MultiSelectDemoPage extends React.Component {
         return (
             <div>
                 <h2>Examples</h2>
-                <ComponentRenderer title="Simple Multi Select Example" codeBlock={SimpleMultiSelectExampleCode}>
+                <h3>MultiSelect Component</h3>
+                <p>A multiselect component accepts array of object as input and returns the selected options as an object. It uses checkbox component internally.</p>
+                <ComponentRenderer title="Simple Select" codeBlock={SimpleMultiSelectExampleCode}>
                     <SimpleMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="Nested Multi Select Example" codeBlock={NestedMultiSelectExampleCode}>
+                <ComponentRenderer title="Nested Example" codeBlock={NestedMultiSelectExampleCode}>
                     <NestedMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="Multi Select with single and multi level nested Checkbox" codeBlock={MixedMultiSelectExampleCode}>
+                <ComponentRenderer title="Nested" codeBlock={MixedMultiSelectExampleCode}>
                     <MixedMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="Deeply Nested MultiSelect Example" codeBlock={DeeplyNestedMultiSelectExampleCode}>
+                <ComponentRenderer title="Deeply Nested" codeBlock={DeeplyNestedMultiSelectExampleCode}>
                     <DeeplyNestedMultiSelectExample />
                 </ComponentRenderer>
 
