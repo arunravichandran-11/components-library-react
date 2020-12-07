@@ -33,7 +33,6 @@
             border-radius: 5px;
             width: 8px;
             background-color: rgba(0, 0, 0, 0.7);
-            // background-color: black;
             transform-origin: left top;
             transition: opacity 0.5s ease;
         }
@@ -42,7 +41,6 @@
             transform: rotate(-135deg);
             top: 30px;
             left: 16.5px;
-            box-shadow: 0 0 0 2px #fff;
         }
 
         &::after {           
@@ -54,6 +52,21 @@
 
     .checkbox-label {
         padding-left: 16px;
+    }
+
+    .check-box.show-child {
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18px;
+            height: 0px;
+            display: inline-block;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid black;
+            border-radius: 5px;
+        }
     }
 
     .check-box.indeterminate {
@@ -85,8 +98,7 @@
             height: 20px;
             animation: bottomlineanimation 0.1s ease 0s forwards;
         }
-        
-        
+
     }
 }
 
