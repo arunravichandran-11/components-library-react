@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CheckboxComponent from './index';
 
-const CheckboxList = ({ options, selectedOptions, onChange }) => {
+const CheckboxList = ({ options, selectedOptions, onChange, align }) => {
 
     const handleCheckboxClicked = (selectedOptionId, option, isSelected) => {
       option.selected = isSelected;
@@ -101,7 +101,7 @@ const CheckboxList = ({ options, selectedOptions, onChange }) => {
                         />
                         {
                             (option.subOptions && option.subOptions.length > 0 && option.selected) &&
-                            <ul>
+                            <ul className={align}>
                               <CheckboxList 
                                   options={option.subOptions}
                                   allChecked = {option.isAllSelected} 

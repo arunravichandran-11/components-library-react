@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedMultiSelectComponent from '@Components/Multi-Select/Animated';
+import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
 
 import CodeBlock from '../../../CodeBlock';
 
@@ -21,10 +21,10 @@ class AnmatedMultiSelectExampleSimple extends React.Component {
         return (
             <div>
                 <AnimatedMultiSelectComponent 
-                    // title="Bikes"
-                    // data={bikesTree}
-                    // selectedItems={this.getSelected} // should change this as onChange
-                    // selectedOptions={this.state.selectedItems || {}} 
+                    title="Bikes"
+                    data={bikesTree}
+                    selectedItems={this.getSelected} // should change this as onChange
+                    selectedOptions={this.state.selectedItems || {}} 
                 />
                 {
                     this.state.selectedItems && (

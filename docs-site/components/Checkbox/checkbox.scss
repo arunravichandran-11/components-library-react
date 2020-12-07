@@ -38,3 +38,11 @@
       }
    }
 }
+
+.checkbox + ul.horizontal {
+    display: flex;
+
+    & > div {
+      display: flex;
+    }
+}
