@@ -1,0 +1,22 @@
+{
+    "id": "bike-id",
+    "name": "Bikes",
+    "subOptions": [
+        {
+            "id": "Ninja-id",
+            "name": "Ninja"
+        },
+        {
+            "id": "Enfield-Id",
+            "name": "Royal Enfield"
+        },
+        {
+            "id": "Hayabusa-id",
+            "name": "Hayabusa"
+        },
+        {
+            "id": "ducati-id",
+            "name": "Ducati"
+        }
+    ]
+}

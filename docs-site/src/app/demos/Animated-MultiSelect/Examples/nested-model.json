@@ -1,0 +1,51 @@
+{
+    "id": "Vehicle-id",
+    "name": "Vehicles",
+    "subOptions": [
+        {
+            "id": "car-id",
+            "name": "Car",
+            "subOptions": [
+                {
+                    "id": "Lambo-id",
+                    "name": "Lamborghini"
+                },
+                {
+                    "id": "tata-id",
+                    "name": "Tata"
+                }    
+            ]
+        },
+        {
+            "id": "bus-id",
+            "name": "Bus"
+        },
+        {
+            "id": "train-id",
+            "name": "Train",
+            "subOptions": []
+        },
+        {
+            "id": "bike-id",
+            "name": "Bikes",
+            "subOptions": [
+                {
+                    "id": "Ninja-id",
+                    "name": "Ninja"
+                },
+                {
+                    "id": "Enfield-Id",
+                    "name": "Royal Enfield"
+                },
+                {
+                    "id": "Hayabusa-id",
+                    "name": "Hayabusa"
+                },
+                {
+                    "id": "ducati-id",
+                    "name": "Ducati"
+                }
+            ]
+        }
+    ]
+}
