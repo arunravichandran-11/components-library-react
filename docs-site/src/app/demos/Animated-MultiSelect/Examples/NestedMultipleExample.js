@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedMultiSelectComponent from '@Components/Multi-Select/Animated';
+import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
 
 import CodeBlock from '../../../CodeBlock';
 

@@ -21,7 +21,7 @@ class MultiSelectComponent extends React.Component {
     }
     
     render() {
-      const {data, title} = this.props;
+      const {data, title, align} = this.props;
       
       return (
 
@@ -30,6 +30,7 @@ class MultiSelectComponent extends React.Component {
 
              <CheckboxList
                options={data} 
+               align={align}
                onChange={this.handleCheckListChange}
                selectedOptions={this.state.selectedItems} 
               />

@@ -11,6 +11,10 @@ import AnmatedMultiSelectExampleSimpleCode from '!raw-loader!./Examples/SimpleEx
 import OneLevelNestedExample from './Examples/OneLevelNestedExample';
 import OneLevelNestedExampleCode from '!raw-loader!./Examples/OneLevelNestedExample';
 
+import ExampleWithNoData from './Examples/ExampleWithNoData';
+import ExampleWithNoDataCode from '!raw-loader!./Examples/ExampleWithNoData';
+
+
 import PropsDescriptor from '../../PropsDescriptor';
 import dataModel from './dataModel.json';
 import CodeBlock from '../../CodeBlock';
@@ -28,6 +32,10 @@ class AnimatedMultiSelectDemoPage extends React.Component {
                 
                 <ComponentRenderer title="Simple Example" codeBlock={AnmatedMultiSelectExampleSimpleCode}>
                     <AnmatedMultiSelectExampleSimple />
+                </ComponentRenderer>
+
+                <ComponentRenderer title="No Data Property" codeBlock={ExampleWithNoDataCode}>
+                    <ExampleWithNoData />
                 </ComponentRenderer>
 
                 <ComponentRenderer title="One Level Nested" codeBlock={OneLevelNestedExampleCode}>
