@@ -95,14 +95,6 @@ class AnmatedMultiSelectExample extends React.Component {
         return (
             <div>
                 <AnimatedMultiSelectComponent title="Projects" data={frameworkTree} selectedItems={this.getSelected}/>
-
-                {/* Note: The below codeblock is used only for displaying the selected data. */}
-
-                {this.state.selectedItems &&
-                <CodeBlock>
-                 { JSON.stringify(this.state.selectedItems, null, 3) }
-                </CodeBlock>
-                }
             </div>
         )
     }

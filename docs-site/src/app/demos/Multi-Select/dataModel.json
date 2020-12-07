@@ -1,0 +1,34 @@
+[
+    {
+        "id": "VH-23",
+        "name": "Vehicle",
+        "subOptions": [
+            {
+                "id": "Bike-Id",
+                "name": "Bike"
+            },
+            {
+                "id": "Car-Id",
+                "name": "Car"
+            }
+        ]
+    },
+    {
+        "id": "Home-13",
+        "name": "Home",
+        "subOptions": [
+            {
+                "id": "apt-Id",
+                "name": "Apartments"
+            },
+            {
+                "id": "vi-Id",
+                "name": "Villa"
+            }
+        ]
+    },
+    {
+        "id": "tra-id",
+        "name": "Travel"
+    }
+]

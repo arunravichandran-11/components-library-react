@@ -6,9 +6,6 @@
 
     .app-header {
         z-index: 3;
-        // a {
-        //     position: relative;
-        // }
     }
 
     header {
@@ -112,6 +109,12 @@
             padding: 32px;
             box-sizing: border-box;
             overflow: auto;
+
+            * {
+                h3 {
+                    font-weight: normal;
+                }
+            }
 
             @include mobile {
                 width: 100%;
