@@ -13,7 +13,6 @@ import CheckboxWithLabelExampleCode from '!raw-loader!./Examples/CheckboxWithLab
 import CheckboxWithLabelAlignmentExample from './Examples/CheckboxWithLabelAlignment';
 import CheckboxWithLabelAlignmentExampleCode from '!raw-loader!./Examples/CheckboxWithLabelAlignment';
 
-
 import ComponentRenderer from '../../ComponentRenderer';
 
 class CheckboxDemoPage extends React.Component {
@@ -24,15 +23,19 @@ class CheckboxDemoPage extends React.Component {
         return (
             <div>
                 <h2>Examples</h2>
+                <h3>Checkbox Component</h3>
+                <p>A simple checkbox which is created as a controlled component, meaning, the check and uncheck has to be controlled by parent component using `selected` prop.</p>
+
                 <ComponentRenderer title="Simple Checkbox" codeBlock={SimpleCheckboxExampleCode}>
                     <SimpleCheckboxExample />
                 </ComponentRenderer>
 
-                <ComponentRenderer title="CheckBox With Label (Horizontal)" codeBlock={CheckboxWithLabelExampleCode}>
+
+                <ComponentRenderer title="Labelled" codeBlock={CheckboxWithLabelExampleCode}>
                     <CheckboxWithLabelExample />
                 </ComponentRenderer>
 
-                <ComponentRenderer title="CheckBox With Label (Vertical)" codeBlock={CheckboxWithLabelAlignmentExampleCode}>
+                <ComponentRenderer title="Vertical Align" codeBlock={CheckboxWithLabelAlignmentExampleCode}>
                     <CheckboxWithLabelAlignmentExample />
                 </ComponentRenderer>
 

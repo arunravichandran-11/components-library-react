@@ -32,7 +32,7 @@ class ComponentRenderer extends React.Component {
             <div style={rootElementStyle} className="component-renderer-root">
                 <div className={showBlockClassName}>
                     <header>
-                        <div>Code Block - {this.props.title}</div>
+                        <div>{this.props.title}</div>
                         <div>
                             <div onClick={this.expandCodeBlock} className="icon-button">
                                 <i className="fa fa-code" aria-hidden="true"></i>
