@@ -6,13 +6,21 @@ import AnimatedMultiSelectComponent from '@Components/Multi-Select/Animated';
 import CodeBlock from '../../../CodeBlock';
 
 const frameworkTree = [
+    {
+        name: "C++",
+        id: "c++-id",
+    },
+    {
+        name: "C programming",
+        id: "C-id",
+    },
   {
       name: "JavaScript Frameworks",
       id: "JS-id",
       subOptions: [
           {
               name: "Angular",
-              id: "JS-an-id",
+              id: "angular-id",
               subOptions: [
                 {
                     name: "AngualrJS",
@@ -51,6 +59,27 @@ const frameworkTree = [
           {
               name: "React",
               id: "JS-re-id",
+              subOptions: [
+                {
+                    name: "react-v1",
+                    id: "rv-1",
+                    subOptions: [
+                        {
+                            name: "react-v1-1",
+                            id: "rv-1.1",
+                        },
+                        {
+                            name: "react-v1-2",
+                            id: "rv-1.2",
+                        }
+                    ]
+                },
+                {
+                    name: "react-v2",
+                    id: "rv2",
+                    // subOptions: []
+                }
+            ]
           },
           {
               name: "Vue",
@@ -118,7 +147,7 @@ const frameworkTree = [
 class AnmatedMultiSelectExample extends React.Component {
 
     state = {
-        selectedItems: null,
+        selectedItems: {},
     }
 
     getSelected = (selectedItem) => {
@@ -130,7 +159,15 @@ class AnmatedMultiSelectExample extends React.Component {
     render() {
         return (
             <div>
-                <AnimatedMultiSelectComponent title="Projects" data={frameworkTree} selectedItems={this.getSelected}/>
+                <AnimatedMultiSelectComponent 
+                    title="Projects"
+                    data={frameworkTree}
+                    selectedItems={this.getSelected} // should change this as onChange
+                    selectedOptions={this.state.selectedItems} 
+                />
+                <CodeBlock>
+                 { JSON.stringify(this.state.selectedItems, null, 3) }
+                </CodeBlock>
             </div>
         )
     }

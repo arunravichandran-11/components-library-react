@@ -5,7 +5,7 @@ import  './animated-checkbox.scss';
 class AnimatedCheckbox extends React.Component {
 
     handleClick = (event) => {
-        this.props.onChange(!this.props.checked);
+        this.props.onChange(!this.props.checked, this.props.checkState);
     }
     render() {
         const classCheck = "check-box "+this.props.checkState;
