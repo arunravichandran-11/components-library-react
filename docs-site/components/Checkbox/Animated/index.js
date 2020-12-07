@@ -8,11 +8,10 @@ class AnimatedCheckbox extends React.Component {
         this.props.onChange(!this.props.checked);
     }
     render() {
-
         const classCheck = "check-box "+this.props.checkState;
 
         return (
-            <div className="animated-checkbox-container" onClick={this.handleClick}>
+            <div className="animated-checkbox-container" onClick={this.handleClick} style={this.props.style}>
                 <input type="checkbox" className="checkbox-input" />
                 <label className={classCheck}>
                     <span></span>

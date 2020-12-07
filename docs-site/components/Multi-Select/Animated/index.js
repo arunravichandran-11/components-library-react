@@ -18,17 +18,20 @@ class AnimatedMultiSelectComponent extends React.Component {
     }
 
     handleSelection = (item, data) => {
-        
+
         if(item.subOptions) {
             let isSomethingSelected = item.subOptions.some((option) => option.selected);
             let isEvery = item.subOptions.every((option) => option.selected);
 
             if(isEvery) {
                 item.checkState = 'checked';
+                item.allSelected = true;
             } else if(isSomethingSelected) {
                 item.checkState = 'indeterminate';
+                item.allSelected = false;
             } else {
                 item.checkState = 'dont-check';
+                item.allSelected = false;
             }
         } else {
             item.selected = isChecked;
@@ -37,6 +40,18 @@ class AnimatedMultiSelectComponent extends React.Component {
 
         this.props.selectedItems(data);
 
+    }
+
+    onSelectAll = (isAllSelected, item) => {
+        item.subOptions.map((option) => {
+            option.selected = isAllSelected;
+            option.checkState = isAllSelected ? 'checked' : 'un-checked';
+        });
+
+        item.allSelected = isAllSelected;
+        item.checkState = isAllSelected ? 'checked' : 'un-checked';
+
+        this.props.selectedItems({item});
     }
 
     render() {
@@ -56,6 +71,15 @@ class AnimatedMultiSelectComponent extends React.Component {
                                         {
                                             item.selected && 
                                             <div style={{paddingLeft: 20}}>
+                                                <AnimatedCheckbox
+                                                        label="Select All"
+                                                        style={{background: 'rgba(0,0,0,0.1)', color: 'grey'}}
+                                                        checked={item.allSelected}
+                                                        checkState={item.allSelected ? 'checked' : 'un-checked'}
+                                                        onChange={(isChecked) => 
+                                                            this.onSelectAll(isChecked, item)
+                                                        }
+                                                />
                                                 <AnimatedMultiSelectComponent data={item.subOptions} 
                                                     selectedItems={(data) => {
                                                         this.handleSelection(item, data)
