@@ -5,41 +5,167 @@ import AnimatedCheckbox from '../../Checkbox/Animated';
 
 class AnimatedMultiSelectComponent extends React.Component {
 
-    checkBoxClicked= (isChecked, item, inputData=null) => {
-        item.selected = isChecked;
-        item.checkState = isChecked ? 'checked' : 'dont-select';   
+    formSelectedItems = (selectedOptions, optionId, type) => {
 
-        this.props.selectedItems(inputData);
-        
-    }
-    checkParentBoxClicked = (isChecked, item, inputData=null) => {
-        item.selected = isChecked;
-        this.props.selectedItems(inputData);
-    }
+        if(type && type=='select-all') {
 
-    handleSelection = (item, data) => {
-        
-        if(item.subOptions) {
-            let isSomethingSelected = item.subOptions.some((option) => option.selected);
-            let isEvery = item.subOptions.every((option) => option.selected);
-
-            if(isEvery) {
-                item.checkState = 'checked';
-            } else if(isSomethingSelected) {
-                item.checkState = 'indeterminate';
+            if(selectedOptions[optionId]){
             } else {
-                item.checkState = 'dont-check';
+                selectedOptions[optionId] = {};
             }
+    
+        } else if(type && type=='deselect-all') {
+
+            if(selectedOptions[optionId]){
+                delete selectedOptions[optionId];
+            } else {
+                // selectedOptions[optionId] = {};
+            }
+    
         } else {
-            item.selected = isChecked;
-            item.checkState = isChecked ? 'checked' : 'dont-select';    
+            if(selectedOptions[optionId]){
+                delete selectedOptions[optionId];
+            } else {
+                selectedOptions[optionId] = {};
+            }    
         }
 
-        this.props.selectedItems(data);
+    }
 
+    checkBoxClicked= (isChecked, item, selectedOptions, checkedState) => {
+
+        item.selected = isChecked;
+        item.checkState = isChecked ? 'checked' : 'dont-select';
+        this.formSelectedItems(selectedOptions, item.id);
+        this.props.selectedItems(selectedOptions);
+    }
+
+    checkParentBoxClicked = (isChecked, item, selectedOptions, data) => {
+        let anythingchecked = this.checkIfAnyChildChecked(item);
+        let isEveryChildChecked = this.checkIfAllChildChecked(item);
+        let anyIndeterminate = this.checkIfSomeIntermediate(item);
+
+        if(isEveryChildChecked) {
+            item.checkState = 'checked';
+            item.selected = isChecked;
+        } else if(anythingchecked || anyIndeterminate) {
+            item.checkState = 'indeterminate';
+            item.selected = isChecked;
+        } else {
+            item.checkState = isChecked ? 'show-child' : 'new-logic';
+            item.selected = isChecked;
+            this.formSelectedItems(selectedOptions, item.id);
+        }
+
+        this.props.selectedItems(selectedOptions);
+    }
+
+    checkIfAllSelected = (item) => {
+        return item.subOptions.every((option) => option.selected);
+    }
+
+    checkIfAnyChildChecked = (item) => {
+        return item.subOptions.some((option) => (option.checkState==='checked'));
+    }
+
+    checkIfAllChildChecked = (item) => {
+        return item.subOptions.every((option) => (option.checkState==='checked'));
+    }
+
+    checkIfAllIntermediate = (item) => {
+        return item.subOptions.every((option) => (option.checkState==='indeterminate'));
+    }
+
+    checkIfSomeIntermediate = (item) => {
+        return item.subOptions.some((option) => (option.checkState==='indeterminate'));
+    }
+
+    checkIfAnyChildSelected = (item) => {
+        let isSomethingSelected = item.subOptions.some((option) => option.selected);
+        return isSomethingSelected;
+    }
+
+    handleSelection = (item, selectedOptions) => {
+
+        if(item.subOptions) {
+            let anythingchecked = this.checkIfAnyChildChecked(item);
+            let isEveryChildChecked = this.checkIfAllChildChecked(item);
+            let anyIndeterminate = this.checkIfSomeIntermediate(item);
+            if(isEveryChildChecked) {
+                item.checkState = 'checked';
+                item.allSelected = true;
+            } else if(anythingchecked || anyIndeterminate) {
+                item.checkState = 'indeterminate';
+                item.allSelected = false;
+            } else {
+                item.checkState = item.selected ? 'show-child' : 'un-checked';
+                item.allSelected = false;
+            }
+        }
+
+        // this.formSelectedItems(selectedOptions[item.id], selectedOptions)
+        this.props.selectedItems(selectedOptions);
+    }
+
+    checkAllNested(item, selectedOptions) {
+        if(item.subOptions.length > 0) {
+            item.subOptions.map((subItem) => {
+                subItem.checkState = 'checked';
+                subItem.selected = true;
+                subItem.allSelected = true;
+                
+                if(subItem.subOptions) {
+                    if(selectedOptions[item.id][subItem.id]) {
+                    } else {
+                        selectedOptions[item.id][subItem.id] = {};
+                    }
+                    this.checkAllNested(subItem, selectedOptions[item.id]);
+                    // this.formSelectedItems(selectedOptions[item.id], subItem.id, 'select-all');
+                } else {
+                    if(selectedOptions[item.id][subItem.id]) {
+                    } else {
+                        selectedOptions[item.id][subItem.id] = {};
+                    }
+                }
+            });
+        }
+    }
+
+    uncheckAllNested(item, selectedOptions ) {
+        if(item.subOptions.length > 0) {
+            item.subOptions.map((subItem) => {
+                subItem.checkState = 'un-checked';
+                subItem.selected = false;
+                subItem.allSelected = false;
+                if(subItem.subOptions) {
+                    this.uncheckAllNested(subItem, selectedOptions[item.id]);
+                } else {
+                    subItem.checkState = 'un-checked';
+                    subItem.allSelected = false;
+                }
+                this.formSelectedItems(selectedOptions[item.id], subItem.id, 'deselect-all');
+            });
+        }
+    }
+
+    onSelectAll = (isAllSelected, item, selectedOptions) => {
+
+        if(isAllSelected) {
+            this.checkAllNested(item, selectedOptions);
+        } else {
+            this.uncheckAllNested(item, selectedOptions);
+        }
+
+        item.allSelected = isAllSelected;
+        item.checkState = isAllSelected ? 'checked' : 'show-child';
+
+        this.props.selectedItems(selectedOptions);
     }
 
     render() {
+
+        const {selectedOptions, data} = this.props;
+
         return (
             <div className="animated-multi-select-wrapper">
                 { 
@@ -52,13 +178,24 @@ class AnimatedMultiSelectComponent extends React.Component {
                                                 key={item.id} label={item.name}
                                                 checked={item.selected}
                                                 checkState={item.checkState}
-                                                onChange={(isChecked) => this.checkParentBoxClicked(isChecked, item)} />
+                                                onChange={(isChecked, checkedState) => this.checkParentBoxClicked(isChecked, item, selectedOptions, checkedState)} />
                                         {
                                             item.selected && 
                                             <div style={{paddingLeft: 20}}>
-                                                <AnimatedMultiSelectComponent data={item.subOptions} 
+                                                <AnimatedCheckbox
+                                                        label="Select All"
+                                                        style={{background: 'rgba(0,0,0,0.1)', color: 'grey'}}
+                                                        checked={item.allSelected}
+                                                        checkState={item.allSelected ? 'checked' : 'un-checked'}
+                                                        onChange={(isChecked, checkedState) => 
+                                                            this.onSelectAll(isChecked, item, selectedOptions, checkedState)
+                                                        }
+                                                />
+                                                <AnimatedMultiSelectComponent data={item.subOptions}
+                                                    data={item.subOptions}
+                                                    selectedOptions={selectedOptions[item.id]}
                                                     selectedItems={(data) => {
-                                                        this.handleSelection(item, data)
+                                                        this.handleSelection(item, selectedOptions)
                                                     }} />
                                             </div>
                                         }
@@ -72,7 +209,7 @@ class AnimatedMultiSelectComponent extends React.Component {
                                     label={item.name}
                                     checked={item.selected}
                                     checkState={item.checkState}
-                                    onChange={(isChecked) => this.checkBoxClicked(isChecked, item)} />
+                                    onChange={(isChecked, checkedState) => this.checkBoxClicked(isChecked, item, selectedOptions, checkedState)} />
                             )
                         }
                     })
