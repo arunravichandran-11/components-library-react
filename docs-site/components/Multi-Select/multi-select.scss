@@ -5,6 +5,37 @@
   }  
 }
 
+.helper-container {
+  margin: 20px 0px;
+
+  display: inline-block;
+  min-width: 320px;
+
+  .helper-container-wrapper {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+    width: 100%;
+  }
+
+  .no-data-block {
+    padding: 20px;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .drop-down {
+    padding: 8px 20px;
+    color: #fff;
+    line-height: 36px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
 .animated-multi-select-wrapper {
   width: auto;
   display: inline-block;

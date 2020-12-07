@@ -111,9 +111,18 @@
             overflow: auto;
 
             * {
-                h3 {
+                h2, h3 {
                     font-weight: normal;
                 }
+                p {
+                    text-align: justify;
+                }
+            }
+
+            .short-notes {
+                background-color: #ddd;
+                padding: 8px;
+                border-radius: 8px;
             }
 
             @include mobile {
