@@ -26,14 +26,14 @@
       font-size: 24px;
       
       &.partially-selected::after {
-        content: ' ';
-        width: 12px;
-        height: 13px;
-        border: 1px solid;
-        background-color: #4091f7;
-        position: absolute;
-        left: 5px;
-        top: 7px;
+          content: " ";
+          width: 9px;
+          height: 9px;
+          border: 1px solid;
+          background-color: #4091f7;
+          position: absolute;
+          left: 4px;
+          top: 6px;
       }
     }
     .intermediate, .partial {

@@ -1,12 +1,9 @@
 import React from 'react';
 import ComponentRenderer from '../../ComponentRenderer';
-import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 
 import NestedTreeExampleComponent from './Examples/NestedTreeExample';
 import NestedTreeExampleComponentCode from '!raw-loader!./Examples/NestedTreeExample.js';
 
-
-import PropsDescriptor from '../../PropsDescriptor';
 import dataModel from './dataModel.json';
 import CodeBlock from '../../CodeBlock';
 

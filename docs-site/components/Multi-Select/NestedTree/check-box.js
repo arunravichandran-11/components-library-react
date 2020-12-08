@@ -1,14 +1,9 @@
 import React from 'react';
 import '../../Checkbox/checkbox.scss';
-
 import PropTypes from 'prop-types';
 var classNames = require('classnames');
 
 class CheckBox extends React.Component {
-
-    state = {
-        arrowDown: false,
-    }
 
     /**
      * toggles the check and uncheck state of this component.
@@ -21,55 +16,6 @@ class CheckBox extends React.Component {
         }
     };
 
-    /**
-     * unchecks all the child elements
-     * you have to pass a callback function to receive the status of unselect inorder to set the unselect from the parent component
-     * This is made as a controlled component and so, the unselect will be passed as a props and will let the control to the parent.
-     * @param {object} event 
-     */
-    unCheckAll = (event) => {
-        this.props.onUnselect(false);
-    };
-
-    /**
-     * initial checkbox rendering based on checkbox selection state('checked' || 'unchecked' || 'indeterminate')
-     */
-    renderCheckBox() {
-        if(this.props.allSelected) {
-            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square')} onClick={this.unCheckAll}></div>
-        } else if(this.props.isPartiallySelected) {
-            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-pencil-square-o')}></div>
-        } else {
-            return (
-                <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-square-o')}></div>
-            )
-        }
-    }
-
-    /**
-     * initial icons before checkbox label based on state('checked' || 'unchecked' || 'indeterminate')
-     */
-    renderToggleIcons() {
-        if(this.props.selected) {
-            if(this.props.allSelected) {
-                return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square')} onClick={this.unCheckAll}></div>
-            } else if(this.props.isPartiallySelected) {
-                return <div className={classNames('checkbox__icon')} onClick={this.unCheckAll}>
-                    <div className="intermediate">
-                        <div className="fa fa-square"></div>
-                    </div>
-                </div>
-            } else  {
-                return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-minus-square-o')} onClick={this.handleClick}></div>
-            }
-        } else {
-            return (
-                <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-plus-square-o')} onClick={this.handleClick}></div>
-            )
-        }
-
-    }
-
     render() {
 
         const { selected, label, align, hasChild } = this.props;
@@ -79,7 +25,6 @@ class CheckBox extends React.Component {
 
         return (
             <div className={containerClass}>
-                {/* {hasChild && this.renderToggleIcons()} */}
                 {!hasChild && <div className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} onClick={this.handleClick}></div>}
                 <div className="checkbox__label">{label}</div>
             </div>
