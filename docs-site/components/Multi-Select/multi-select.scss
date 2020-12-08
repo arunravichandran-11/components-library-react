@@ -2,7 +2,27 @@
   .title {
     font-size: 18px;
     font-weight: normal;
-  }  
+  }
+  i {
+    cursor: pointer;
+  }
+}
+
+.nested-tree-container {
+  .check-list-wrapper {
+    position: relative;
+  }
+  
+  .check-box-wrapper {
+    position: relative;
+    padding-left: 12px;
+    & > i.toggle-icon {
+      font-size: 18px;
+      position: absolute;
+      left: 2px;
+      top: 8px;
+    }
+  }
 }
 
 .helper-container {
@@ -14,6 +34,10 @@
   .helper-container-wrapper {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
     width: 100%;
+
+    i {
+      cursor: pointer;
+    }
   }
 
   .no-data-block {
@@ -28,7 +52,6 @@
     padding: 8px 20px;
     color: #fff;
     line-height: 36px;
-    background-color: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -11,6 +11,7 @@ import TooltipComponent from '@Components/Tooltip';
 import AnimatedMultiSelectDemoPage from './demos/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
+import NestedTreeDemoPage from './demos/Nested-Tree';
 import InstallationGuide from './Installation';
 
 class App extends React.Component { 
@@ -49,6 +50,7 @@ class App extends React.Component {
                             <ListComponent>
                                 <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
+                                <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
                             </ListComponent>
                         </DrawerComponent>
@@ -68,6 +70,9 @@ class App extends React.Component {
                                 </Route>
                                 <Route path="/checkbox">
                                     <CheckboxDemoPage />
+                                </Route>
+                                <Route path="/nested-tree">
+                                    <NestedTreeDemoPage />
                                 </Route>
                             </Switch>
                         </div>
