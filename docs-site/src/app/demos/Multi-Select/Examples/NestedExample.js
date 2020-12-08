@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from '@Components/Multi-Select';
 import CodeBlock from '../../../CodeBlock';
 
 const projectTree = [
@@ -72,8 +72,17 @@ class DeeplyNestedMultiSelectExample extends React.Component {
     }
 
     getSelected = (selectedItem) => {
+
+        console.log('gett', selectedItem);
+
+        var resultSelectedItems = {
+          id: selectedItem.id,
+          name: selectedItem.name,
+          selectedChild: selectedItem.selectedChild
+        };
+        
         this.setState({
-            selectedItems: selectedItem
+            selectedItems: resultSelectedItems
         });
     }
 

@@ -2,7 +2,10 @@
   .title {
     font-size: 18px;
     font-weight: normal;
-  }  
+  }
+  i {
+    cursor: pointer;
+  }
 }
 
 .helper-container {
@@ -14,6 +17,10 @@
   .helper-container-wrapper {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
     width: 100%;
+
+    i {
+      cursor: pointer;
+    }
   }
 
   .no-data-block {

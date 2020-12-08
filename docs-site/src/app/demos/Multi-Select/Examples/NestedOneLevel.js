@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import MultiSelectComponent from '@Components/Multi-Select';
 import data from '../dataModel.json';
 import CodeBlock from '../../../CodeBlock';
 
