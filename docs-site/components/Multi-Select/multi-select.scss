@@ -8,6 +8,23 @@
   }
 }
 
+.nested-tree-container {
+  .check-list-wrapper {
+    position: relative;
+  }
+  
+  .check-box-wrapper {
+    position: relative;
+    padding-left: 12px;
+    & > i.toggle-icon {
+      font-size: 18px;
+      position: absolute;
+      left: 2px;
+      top: 8px;
+    }
+  }
+}
+
 .helper-container {
   margin: 20px 0px;
 
@@ -35,7 +52,6 @@
     padding: 8px 20px;
     color: #fff;
     line-height: 36px;
-    background-color: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;

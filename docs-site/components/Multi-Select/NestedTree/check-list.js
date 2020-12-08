@@ -49,19 +49,13 @@ class CheckboxList extends React.Component {
 
   }
 
-
-
   handleSelected = (selectedObj, isSelected, parent) => {
     console.log('handleSelect', selectedObj);
 
     if(!selectedObj.selected || selectedObj.selected === 'none') {
       if(selectedObj.subOptions && selectedObj.subOptions.length > 0) {
-        // it has child
-        console.log('child is there');
         this.setAllChildSelected(selectedObj);
-
       } else {
-        console.log('no chidl');
         selectedObj.selected = 'selected';
       }
     } else {
@@ -79,15 +73,6 @@ class CheckboxList extends React.Component {
       }
     }
 
-    // if(selectedObj.subOptions && selectedObj.subOptions.length>0) {
-    //   selectedObj.subOptions.forEach(element => {
-    //     element.selected = 'selected';
-    //   });
-    // } else {
-    //   selectedObj.selected = isSelected;
-    // }
-
-      // selectedObj.selected = isSelected ? 'selected' : 'none';
       this.props.onSelect(selectedObj, parent);
   }
 
@@ -107,28 +92,38 @@ class CheckboxList extends React.Component {
 
     const {options, onSelect} = this.props;
 
+    const {toggle} = this.state;
+
     return (
-        <div>
+        <div className="nested-check-list-container">
           {
-              options.map((option, index) => {
+              options.subOptions.map((option, index) => {
+                  let childCondition = (option.subOptions && option.subOptions.length > 0);
                   return (
-                          <div key={index}>
-                              { option.subOptions && option.subOptions.length > 0 && (<i className="fa fa-plus" onClick={() => this.toggleChild(option)}></i>)
+                          <div key={index} className={`check-box-wrapper ${childCondition ? 'isParent': ''}`}>
+                              { 
+                                childCondition && (
+                                  <i className={`fa ${option.showChild ? 'fa-caret-down' : 'fa-caret-right'} toggle-icon`} 
+                                      onClick={() => this.toggleChild(option)}
+                                  >
+                                  </i>
+                                  )
                               }
                               <CheckBox
                                   selected={option.selected}
                                   option={option}
                                   label={option.name}
                                   onCheck={(isSelected, selectedObj) => {
-                                    this.handleSelected(selectedObj, isSelected, option);
+                                    this.handleSelected(selectedObj, isSelected, options);
                                   }} />
-                              <div style={{padding: 20}}>
+
                                   {
                                     option.showChild && (
-                                      <CheckboxList options={option.subOptions} onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                      <div className="check-list-wrapper">
+                                        <CheckboxList options={option} onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                       </div>
                                     )
                                   }
-                              </div>
                           </div>
                   )
               })
@@ -292,7 +287,7 @@ class CheckboxList extends React.Component {
 //   }
   
   CheckboxList.propTypes = {
-    options: PropTypes.array, 
+    // options: PropTypes.array, 
     selectedOptions: PropTypes.object, 
     onChange: PropTypes.func,
   };

@@ -1,49 +1,36 @@
 {
-    "id": "Vehicle-id",
-    "name": "Vehicles",
+    "id": "Nodes-Parent-id",
+    "name": "Nodes",
     "subOptions": [
         {
-            "id": "car-id",
-            "name": "Car",
+            "id": "node-1-id",
+            "name": "Node 1",
             "subOptions": [
                 {
-                    "id": "Lambo-id",
-                    "name": "Lamborghini"
-                },
-                {
-                    "id": "tata-id",
-                    "name": "Tata"
-                }    
+                    "id": "child-node-1-id",
+                    "name": "Child Node 1"
+                }
             ]
         },
         {
-            "id": "bus-id",
-            "name": "Bus"
-        },
-        {
-            "id": "train-id",
-            "name": "Train",
-            "subOptions": []
-        },
-        {
-            "id": "bike-id",
-            "name": "Bikes",
+            "id": "node-2-id",
+            "name": "Node 2",
             "subOptions": [
                 {
-                    "id": "Ninja-id",
-                    "name": "Ninja"
+                    "id": "child-node-2-id",
+                    "name": "Child Node 2"
                 },
                 {
-                    "id": "Enfield-Id",
-                    "name": "Royal Enfield"
+                    "id": "child-node-3-id",
+                    "name": "Child Node 3"
                 },
                 {
-                    "id": "Hayabusa-id",
-                    "name": "Hayabusa"
+                    "id": "child-node-4-id",
+                    "name": "Child Node 4"
                 },
                 {
-                    "id": "ducati-id",
-                    "name": "Ducati"
+                    "id": "child-node-5-id",
+                    "name": "Child Node 5"
                 }
             ]
         }

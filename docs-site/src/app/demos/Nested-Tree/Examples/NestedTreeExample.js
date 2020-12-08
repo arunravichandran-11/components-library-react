@@ -6,7 +6,7 @@ import NestedTree from '@Components/Multi-Select/NestedTree';
 class NestedTreeExampleComponent extends React.Component {
 
     state = {
-        selectedItems: null,
+        selectedItems: {},
     }
 
     getSelected = (selectedItem) => {
@@ -18,7 +18,7 @@ class NestedTreeExampleComponent extends React.Component {
     render() {
         return (
             <div>
-                <NestedTree align="horizontal" title="Frameworks" data={data.subOptions} selectedItems={this.getSelected}/>
+                <NestedTree align="horizontal" title="Frameworks" data={data} selectedOptions= {this.state.selectedItems} selectedItems={this.getSelected}/>
 
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 

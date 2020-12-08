@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 class NestedTree extends React.Component {  
     constructor(props){
-      super(props)
+      super(props);
+
+      this.selectedItems = [];
       this.state = {
         selectedOptions: {},
         selectedItems: {},
@@ -71,7 +73,7 @@ class NestedTree extends React.Component {
       // if(selectedOptions)
       
 
-      this.setState({selectedItems});
+      // this.setState({selectedItems});
 
       if(this.props.selectedItems) {
         this.props.selectedItems({selectedItems});
@@ -82,7 +84,6 @@ class NestedTree extends React.Component {
 
     addSelectedId = (child) => {
         child.subOptions.map((sub) => {
-          console.log('map');
           if(sub.selected) {
             child.selectedIds = [...sub.id];
           } else {
@@ -102,7 +103,6 @@ class NestedTree extends React.Component {
     }
     
     processSelection(parent, child, isChildSelected, originalData) {
-      console.log('finally', parent, child, originalData);
 
       if(child.subOptions.length > 0) {
         this.addSelectedId(child);
@@ -115,7 +115,7 @@ class NestedTree extends React.Component {
       
 
       // child.selected = isChildSelected;
-      this.setState(new Object());
+      // this.setState(new Object());
     }
 
     processFiltered(filtered) {
@@ -134,21 +134,21 @@ class NestedTree extends React.Component {
       }
     }
 
-    attachChild(parent, result) {
+    attachChild = (parent, result) => {
 
       let filtered = parent.subOptions ? parent.subOptions.filter((option) => {
         if(option.selected === 'selected' || option.selected === 'partial') {
           return option;
         }
+      }) : parent.length > 0 ? parent.filter((option) => {
+        if(option.selected === 'selected' || option.selected === 'partial') {
+          return option;
+        };
       }) : [];
-
-      // console.log('filterred', filtered);
 
       filtered.forEach((item) => {
         this.attachChild(item, {});
       });
-
-
       var newArray = filtered.map((item) => {
         return {
           id: item.id,
@@ -158,62 +158,170 @@ class NestedTree extends React.Component {
       });
 
       parent.selectedChild = newArray;
-
-      console.log('parent', parent);
-
       if(parent.selectedChild.length == 0) {
-        this.props.selectedItems({});
+        this.sendResponse({});
       } else {
-        this.props.selectedItems(parent);
+        this.sendResponse(
+          {
+              id: parent.id,
+              name: parent.name,
+              selectedChild: parent.selectedChild
+            }
+        );
       }
     }
 
-    processData(obj, parent) {
+    sendResponse = (resData) => {
+
+      var responseObj = Object.assign({}, this.props.selectedOptions, resData);
+
+      this.props.selectedItems(responseObj);
+    } 
+
+    getResult = (res) => {
+      console.log('res', res);
+      this.selectedItems = {
+        ...res,
+      };
+    }
+
+    getFilter = (subOptions) => {
+      return subOptions.filter((option) => (option.selected === 'selected' || option.selected === 'partial'));
+    }
+
+    nestedLoop(obj) {
+      const res = {};
+      function recurse(obj, current) {
+        if(obj.subOptions) {
+          let filtered = obj.subOptions.filter(option => ((option.selected === 'selected') || option.selected === 'partial'));
+          if(filtered.length > 0) {
+            current[obj.id] = {};
+            filtered.forEach((item) => {
+              if(item.selected === 'selected' || item.selected === 'partial') {
+                current[obj.id][item.id] = {};
+                recurse(item, current[obj.id]);
+              }
+            });
+          }
+          
+        }
+      }
+      recurse(obj, res);
+    
+      console.log('response', JSON.stringify(res, null, 3));
+      return res;
+  }
+  
+
+    filterSelected = (data) => {
+
+      let selectedResult = this.nestedLoop(data);
+
+      console.log('sselected Result', selectedResult);
+
+      this.props.selectedItems(selectedResult);
+      
+      // console.log('ths.props.dat', data);
+
+      // let res = this.getFilter(data.subOptions);
+
+      // var filtered = this.getFilter(data.subOptions);
+    
+      // data.subOptions.map((eachOption) => {
+      //   if(eachOption.selected == 'selected' || eachOption.selected == 'partial') {
+      //     // eachOption = undefined;
+      //     console.log('eac', eachOption);
+      //     this.selectedItems.push(eachOption);
+      //   } else {
+      //     console.log('else', eachOption);
+      //   }
+      // });
+
+      // this.selectedItems = [...filtered];
+
+      // console.log('data after', data, this.selectedItems);;
+
+
+
+
+      // if(res.selected === 'partial') {
+      //   this.filterSelected(res);
+      // } else {
+      //   console.log('else', res);
+      // }
+
+      // let filter = data.subOptions ? data.subOptions.filter((option) => {
+
+      //   if(option.selected === 'selected' || option.selected === 'partial') {
+      //     return option;
+      //   }
+      // }) : [];
+
+      // console.log('filter', res);
+
+      // if(filter.length > 0) {
+      //   let result = this.filterSelected(filter);
+      // }
+
+      // data.selectedItems = [...filter];
+
+      // this.getResult(res);
+
+
+      // let subOptions = parent.subOptions;
+
+      // if(parent.subOptions && parent.subOptions.length > 0) {
+      //   for (let i = 0; i < subOptions.length; i++) {
+      //     if (subOptions[i].selected === 'selected') {
+      //         console.log('sib', subOptions[i].id);
+      //         var selectedIds = [];
+      //         selectedIds.push(subOptions[i].id);
+      //         var selectedObj = {
+      //           id: parent.id,
+      //           name: parent.name,
+      //           selectedChild: [...selectedIds]
+      //         }
+      //         parent.selectedItem = selectedObj;
+      //     }
+      //   }
+      //   console.log(parent);
+      // }
+    }
+
+    processSelectedData = (obj, parent) => {
       console.log('obj', obj, parent);
 
-      if(parent) {
-        if(parent.selected === 'selected' || parent.selected === 'partial') {
+      this.filterSelected(this.props.data);
 
-          var result = {
-            [parent.id] : {
-  
-            }
-          };
-  
-          if(parent.subOptions) {
-            let resp = this.attachChild(parent, result);
-          } 
-  
-          // console.log('res', result);
-  
-        } else {
-          console.log('go unset');
-          this.attachChild(parent);  
-        }
-      } else {
 
-      }
-      
+        // if(parent.selected === 'selected' || parent.selected === 'partial') {
+        //   if(parent.subOptions && parent.subOptions.length > 0) {
+        //     let resp = this.attachChild(parent, {});
+        //   }
+        // } else {
 
-      // this.setState({});
+        //   if(parent.subOptions && parent.subOptions.length > 0) {
+        //     this.attachChild(parent);  
+        //   } else {
+        //     if(parent.selected === 'selected') {
+        //       this.attachChild(data);
+        //     }
+        //   }
+        // }
+  
     }
     render() {
       const {data, title, align} = this.props;
       
+
       return (
 
-          <div className="multi-select-container">
+          <div className="multi-select-container nested-tree-container">
              <h2 className="title">{title}</h2>
-
              <CheckboxList
-               options={data} 
+               options={data}
                align={align}
-               onSelect = {(obj, parent) => {
-                 this.processData(obj, parent);
-               }}
-               onChange={(parent, child, isChildSelected) => {
-                 this.processSelection(parent, child, isChildSelected, data);
-               }}
+               onSelect = {this.processSelectedData}
                selectedOptions={this.state.selectedItems} 
               />
            </div>
@@ -222,7 +330,7 @@ class NestedTree extends React.Component {
 }  
 
 NestedTree.propTypes = {
-  data: PropTypes.array,
+  // data: PropTypes.array,
   title: PropTypes.string,
   selectedItems: PropTypes.func,
 };
