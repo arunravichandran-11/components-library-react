@@ -17,8 +17,9 @@ class CheckboxList extends React.Component {
 
   setAllChildSelected = (selectedObj) => {
     selectedObj.selected = (!selectedObj.selected || selectedObj.selected === 'none') ? 'selected' : 'none';
+    selectedObj.selected = 'selected';
     selectedObj.subOptions.forEach((option) => {
-      option.selected = selectedObj.selected;
+      option.selected = 'selected';
       if(option.subOptions) {
         this.setAllChildSelected(option);
       }
