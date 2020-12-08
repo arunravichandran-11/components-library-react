@@ -1,0 +1,44 @@
+{
+    "id": "Nodes-Parent-id",
+    "name": "Nodes",
+    "subOptions": [
+        {
+            "id": "node-1-id",
+            "name": "Node 1",
+            "subOptions": [
+                {
+                    "id": "child-node-1-id",
+                    "name": "Child Node 1",
+                    "subOptions": [
+                        {
+                            "id": "nested-child-1-id",
+                            "name": "Nested child Node 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "node-2-id",
+            "name": "Node 2",
+            "subOptions": [
+                {
+                    "id": "child-node-2-id",
+                    "name": "Child Node 2"
+                },
+                {
+                    "id": "child-node-3-id",
+                    "name": "Child Node 3"
+                },
+                {
+                    "id": "child-node-4-id",
+                    "name": "Child Node 4"
+                },
+                {
+                    "id": "child-node-5-id",
+                    "name": "Child Node 5"
+                }
+            ]
+        }
+    ]
+}
