@@ -18,7 +18,7 @@ class NestedTreeExampleComponent extends React.Component {
     render() {
         return (
             <div>
-                <NestedTree align="horizontal" title="Frameworks" data={data} selectedOptions= {this.state.selectedItems} selectedItems={this.getSelected}/>
+                <NestedTree title="Node Tree" data={data} selectedOptions={this.state.selectedItems} selectedItems={this.getSelected}/>
 
                 {/* Note: The below codeblock is used only for displaying the selected data. */}
 

@@ -16,7 +16,7 @@ class NestedTreeDemoPage extends React.Component {
                 <h2>Examples</h2>
                 <h3>NestedTree Component</h3>
                 
-                <ComponentRenderer title="Simple Example" codeBlock={NestedTreeExampleComponentCode}>
+                <ComponentRenderer title="Nested Example" codeBlock={NestedTreeExampleComponentCode}>
                     <NestedTreeExampleComponent />
                 </ComponentRenderer>
 

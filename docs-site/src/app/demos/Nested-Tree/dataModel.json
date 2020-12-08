@@ -8,7 +8,13 @@
             "subOptions": [
                 {
                     "id": "child-node-1-id",
-                    "name": "Child Node 1"
+                    "name": "Child Node 1",
+                    "subOptions": [
+                        {
+                            "id": "nested-child-1-id",
+                            "name": "Nested child Node 1"
+                        }
+                    ]
                 }
             ]
         },

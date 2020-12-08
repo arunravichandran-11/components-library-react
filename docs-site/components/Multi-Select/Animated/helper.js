@@ -8,20 +8,13 @@ class MultiSelectHelper extends React.Component {
     formSelectedItems = (selectedOptions, optionId, type) => {
 
         if(type && type=='select-all') {
-
-            if(selectedOptions[optionId]){
-            } else {
+            if(!selectedOptions[optionId]){
                 selectedOptions[optionId] = {};
             }
-    
         } else if(type && type=='deselect-all') {
-
             if(selectedOptions[optionId]){
                 delete selectedOptions[optionId];
-            } else {
-                // selectedOptions[optionId] = {};
             }
-    
         } else {
             if(selectedOptions[optionId]){
                 delete selectedOptions[optionId];
@@ -60,10 +53,6 @@ class MultiSelectHelper extends React.Component {
         this.props.selectedItems(selectedOptions);
     }
 
-    checkIfAllSelected = (item) => {
-        return item.subOptions.every((option) => option.selected);
-    }
-
     checkIfAnyChildChecked = (item) => {
         return item.subOptions.some((option) => (option.checkState==='checked'));
     }
@@ -72,17 +61,8 @@ class MultiSelectHelper extends React.Component {
         return item.subOptions.every((option) => (option.checkState==='checked'));
     }
 
-    checkIfAllIntermediate = (item) => {
-        return item.subOptions.every((option) => (option.checkState==='indeterminate'));
-    }
-
     checkIfSomeIntermediate = (item) => {
         return item.subOptions.some((option) => (option.checkState==='indeterminate'));
-    }
-
-    checkIfAnyChildSelected = (item) => {
-        let isSomethingSelected = item.subOptions.some((option) => option.selected);
-        return isSomethingSelected;
     }
 
     handleSelection = (item, selectedOptions) => {
@@ -103,7 +83,6 @@ class MultiSelectHelper extends React.Component {
             }
         }
 
-        // this.formSelectedItems(selectedOptions[item.id], selectedOptions)
         this.props.selectedItems(selectedOptions);
     }
 
@@ -120,7 +99,6 @@ class MultiSelectHelper extends React.Component {
                         selectedOptions[item.id][subItem.id] = {};
                     }
                     this.checkAllNested(subItem, selectedOptions[item.id]);
-                    // this.formSelectedItems(selectedOptions[item.id], subItem.id, 'select-all');
                 } else {
                     if(selectedOptions[item.id][subItem.id]) {
                     } else {
@@ -164,7 +142,7 @@ class MultiSelectHelper extends React.Component {
 
     render() {
 
-        const {selectedOptions, data} = this.props;
+        const {selectedOptions} = this.props;
 
         return (
             <div className="animated-multi-select-wrapper">

@@ -36,6 +36,7 @@ class CheckboxList extends React.Component {
   }
 
   handleSelected = (selectedObj, isSelected, parent) => {
+
     if(!selectedObj.selected || selectedObj.selected === 'none') {
       if(selectedObj.subOptions && selectedObj.subOptions.length > 0) {
         this.setAllChildSelected(selectedObj);
@@ -43,7 +44,7 @@ class CheckboxList extends React.Component {
         selectedObj.selected = 'selected';
       }
     } else {
-      if(selectedObj.selected === 'selected') {
+      if(selectedObj.selected === 'selected' || selectedObj.selected === 'partial') {
         selectedObj.selected = 'none';
         if(selectedObj.subOptions && selectedObj.subOptions.length > 0) {
           this.unSelectAllChild(selectedObj);
