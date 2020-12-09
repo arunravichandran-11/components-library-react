@@ -31,7 +31,7 @@ class MultiSelectComponent extends React.Component {
              <CheckboxList
                options={data} 
                align={align}
-               onChange={this.handleCheckListChange}
+               onSelect={this.handleCheckListChange}
                selectedOptions={this.state.selectedItems} 
               />
            </div>
