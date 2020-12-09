@@ -86,7 +86,7 @@ class CheckboxList extends React.Component {
                                   onCheck={(isSelected, selectedObj) => {
                                     this.handleSelected(selectedObj, isSelected, option);
                                   }} />
-                              <div style={{padding: 20}}>
+                              <div style={{padding: 2}}>
                                   {
                                     option.showChild && (
                                       <CheckboxList 
@@ -107,7 +107,7 @@ class CheckboxList extends React.Component {
 CheckboxList.propTypes = {
   options: PropTypes.array, 
   selectedOptions: PropTypes.object, 
-  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
 };
 
 export default CheckboxList;
