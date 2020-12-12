@@ -33,10 +33,9 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
-      'sample-react-lib-by-arun/lib/': path.join(__dirname, 'components/'),
-      '@Components': path.join(__dirname, 'components/')
+      'sample-react-lib-by-arun/lib': [path.resolve(__dirname, 'components/'), path.resolve(__dirname, 'node_modules/sample-react-lib-by-arun/lib')]
     },
   },
   output: {

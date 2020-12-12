@@ -1,0 +1,63 @@
+
+// .checkbox {
+//     display: inline-flex;
+//     align-items: center;
+//     position: relative;
+//     margin: 8px;
+//     cursor: pointer;
+//     &.vertical {
+//       display: flex;
+//       margin: 16px 8px;
+//     }
+//     &.horizontal {
+//       display: inline-flex;
+//     }
+//     &__label {
+//       font-size: 16px;
+//       padding-left: 40px;
+//       color: black;
+//     }
+//     &__icon {
+//       position: absolute;
+//       width: 100%;
+//       cursor: pointer;
+//       color: rgba(0, 0, 0, 0.6);
+//       // color: #4091f7;
+//       font-size: 24px;
+      
+//       &.partially-selected::after {
+//           content: " ";
+//           width: 9px;
+//           height: 9px;
+//           border: 1px solid;
+//           background-color: rgba(0, 0, 0, 0.6);
+
+//           // background-color: #4091f7;
+//           position: absolute;
+//           left: 4px;
+//           top: 6px;
+//       }
+//     }
+//     .intermediate, .partial {
+//       border: 1px solid black;
+//       width: 25px;
+//       height: 23px;
+//       font-size: 24px;
+//       border-radius: 6px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+  
+//       .fa-square {
+//           font-size: 16px;
+//       }
+//    }
+// }
+
+// .checkbox + ul.horizontal {
+//     display: flex;
+
+//     & > div {
+//       display: flex;
+//     }
+// }

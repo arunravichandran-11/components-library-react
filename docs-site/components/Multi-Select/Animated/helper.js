@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../multi-select.scss';
-import AnimatedCheckbox from '../../Checkbox/Animated';
+import AnimatedCheckbox from '../../AnimatedCheckbox';
 
 class MultiSelectHelper extends React.Component {
 

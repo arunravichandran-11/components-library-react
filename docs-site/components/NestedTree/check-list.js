@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CheckBox from './check-box';
 
-class CheckboxList extends React.Component {
+class NodeList extends React.Component {
 
   state = {
     toggle: false
@@ -95,7 +95,7 @@ class CheckboxList extends React.Component {
                                   {
                                     option.showChild && (
                                       <div className="check-list-wrapper">
-                                        <CheckboxList options={option} onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                        <NodeList options={option} onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
                                        </div>
                                     )
                                   }
@@ -109,9 +109,9 @@ class CheckboxList extends React.Component {
   }
 }
 
-CheckboxList.propTypes = {
+NodeList.propTypes = {
   // options: PropTypes.array,
   onChange: PropTypes.func,
 };
 
-export default CheckboxList;
+export default NodeList;

@@ -7,6 +7,7 @@ const isPropTypeRequired = (method, propType) => (method === PropTypes[propType]
 
 const getPropInfo = (method) => {
   const availableProptypes = [
+    'any',
     'string',
     'bool',
     'array',

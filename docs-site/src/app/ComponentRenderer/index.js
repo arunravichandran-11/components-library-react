@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeBlock from '../CodeBlock';
 import './component-renderer.scss';
-import TooltipComponent from '@Components/Tooltip';
+import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
 
 class ComponentRenderer extends React.Component {
 
