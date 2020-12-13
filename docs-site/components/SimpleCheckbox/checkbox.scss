@@ -1,0 +1,13 @@
+.checkbox-container {
+    // border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+
+    label {
+        span {
+            padding: 0px 6px;
+        }
+    }
+    // margin: 0 8px;
+}

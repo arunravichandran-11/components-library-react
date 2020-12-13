@@ -31,21 +31,6 @@ class CheckboxComponent extends React.Component {
     };
 
     /**
-     * initial checkbox rendering based on checkbox selection state('checked' || 'unchecked' || 'indeterminate')
-     */
-    renderCheckBox() {
-        if(this.props.allSelected) {
-            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-check-square')} onClick={this.unCheckAll}></div>
-        } else if(this.props.isPartiallySelected) {
-            return <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-pencil-square-o')}></div>
-        } else {
-            return (
-                <div className={classNames('fa', 'fa-2x', 'checkbox__icon fa-square-o')}></div>
-            )
-        }
-    }
-
-    /**
      * initial icons before checkbox label based on state('checked' || 'unchecked' || 'indeterminate')
      */
     renderToggleIcons() {

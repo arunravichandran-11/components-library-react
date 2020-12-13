@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckboxComponent from './index';
+import CheckBox from './check-box';
 
-class CheckboxList extends React.Component {
+class NodeList extends React.Component {
 
   state = {
     toggle: false
@@ -17,9 +17,9 @@ class CheckboxList extends React.Component {
 
   setAllChildSelected = (selectedObj) => {
     selectedObj.selected = (!selectedObj.selected || selectedObj.selected === 'none') ? 'selected' : 'none';
-
+    selectedObj.selected = 'selected';
     selectedObj.subOptions.forEach((option) => {
-      option.selected = selectedObj.selected;
+      option.selected = 'selected';
       if(option.subOptions) {
         this.setAllChildSelected(option);
       }
@@ -36,9 +36,8 @@ class CheckboxList extends React.Component {
     });
   }
 
-
-
   handleSelected = (selectedObj, isSelected, parent) => {
+
     if(!selectedObj.selected || selectedObj.selected === 'none') {
       if(selectedObj.subOptions && selectedObj.subOptions.length > 0) {
         this.setAllChildSelected(selectedObj);
@@ -56,7 +55,7 @@ class CheckboxList extends React.Component {
       }
     }
 
-    this.props.onSelect(selectedObj, parent);
+      this.props.onSelect(selectedObj, parent);
   }
 
   handleOnSelect(selObj, onSelect, parent) {
@@ -71,43 +70,48 @@ class CheckboxList extends React.Component {
     const {options, onSelect} = this.props;
 
     return (
-        <div>
+        <div className="nested-check-list-container">
           {
-              options.map((option, index) => {
+              options.subOptions.map((option, index) => {
+                  let childCondition = (option.subOptions && option.subOptions.length > 0);
                   return (
-                          <div key={index}>
+                          <div key={index} className={`check-box-wrapper ${childCondition ? 'isParent': ''}`}>
                               { 
-                                option.subOptions && option.subOptions.length > 0 && (<i className="fa fa-plus" onClick={() => this.toggleChild(option)}></i>)
+                                childCondition && (
+                                  <i className={`fa ${option.showChild ? 'fa-caret-down' : 'fa-caret-right'} toggle-icon`} 
+                                      onClick={() => this.toggleChild(option)}
+                                  >
+                                  </i>
+                                  )
                               }
-                              <CheckboxComponent
+                              <CheckBox
                                   selected={option.selected}
                                   option={option}
                                   label={option.name}
                                   onCheck={(isSelected, selectedObj) => {
-                                    this.handleSelected(selectedObj, isSelected, option);
+                                    this.handleSelected(selectedObj, isSelected, options);
                                   }} />
-                              <div style={{padding: 2}}>
+
                                   {
                                     option.showChild && (
-                                      <CheckboxList 
-                                        options={option.subOptions} 
-                                        onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                      <div className="check-list-wrapper">
+                                        <NodeList options={option} onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                       </div>
                                     )
                                   }
-                              </div>
                           </div>
                   )
               })
           }
         </div>
+                  
     )
   }
 }
 
-CheckboxList.propTypes = {
-  options: PropTypes.array, 
-  selectedOptions: PropTypes.object, 
-  onSelect: PropTypes.func,
+NodeList.propTypes = {
+  // options: PropTypes.array,
+  onChange: PropTypes.func,
 };
 
-export default CheckboxList;
+export default NodeList;

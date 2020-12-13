@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Checkbox/checkbox.scss';
+// import '../Checkbox/checkbox.scss';
 import PropTypes from 'prop-types';
 var classNames = require('classnames');
 

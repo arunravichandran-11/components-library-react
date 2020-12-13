@@ -7,6 +7,16 @@ const languageTree = [
   {
     name: "JavaScript",
     id: "JS-id",
+    subOptions: [
+        {
+            "id": "Bike-Id",
+            "name": "Bike"
+        },
+        {
+            "id": "Car-Id",
+            "name": "Car"
+        }
+     ]
   },
   {
     name: "Java",

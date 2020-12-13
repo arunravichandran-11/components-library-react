@@ -1,5 +1,5 @@
 import React from 'react';
-import '../multi-select.scss';
+import './nested-tree.scss';
 import CheckboxList from './check-list';
 import PropTypes from 'prop-types';
 
