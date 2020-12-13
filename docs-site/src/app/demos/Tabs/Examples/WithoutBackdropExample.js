@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Tabs from 'sample-react-lib-by-arun/lib/Tabs';
-import Pane from 'sample-react-lib-by-arun/lib/Tabs/Pane';
+import Pane from 'sample-react-lib-by-arun/lib/Tabs/pane';
 
 class TabsWithoutBackdropExample extends React.Component {
 

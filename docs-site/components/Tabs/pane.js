@@ -1,11 +1,23 @@
 import React from 'react';
 
-const Pane = ({children}) => {
+class Pane extends React.Component {
+
+  render() {
     return (
         <div>
-          {children}
-        </div>
+           {this.props.children}
+         </div>
     )
+  }
 }
-
 export default Pane;
+
+// const Pane = ({children}) => {
+//     return (
+//         <div>
+//           {children}
+//         </div>
+//     )
+// }
+
+// export default Pane;
