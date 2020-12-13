@@ -21,8 +21,8 @@
       position: absolute;
       width: 100%;
       cursor: pointer;
-      // color: rgba(0, 0, 0, 0.6);
-      color: #4091f7;
+      color: rgba(0, 0, 0, 0.6);
+      // color: #4091f7;
       font-size: 24px;
       
       &.partially-selected::after {
@@ -30,7 +30,9 @@
           width: 9px;
           height: 9px;
           border: 1px solid;
-          background-color: #4091f7;
+          background-color: rgba(0, 0, 0, 0.6);
+
+          // background-color: #4091f7;
           position: absolute;
           left: 4px;
           top: 6px;

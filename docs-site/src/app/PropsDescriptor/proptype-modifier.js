@@ -7,10 +7,13 @@ const isPropTypeRequired = (method, propType) => (method === PropTypes[propType]
 
 const getPropInfo = (method) => {
   const availableProptypes = [
+    'any',
     'string',
     'bool',
     'array',
-    'func'
+    'func',
+    'node',
+    'number'
   ];
 
   return availableProptypes.reduce((obj, curr) => {

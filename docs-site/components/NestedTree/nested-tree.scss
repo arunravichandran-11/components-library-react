@@ -1,0 +1,30 @@
+.nested-tree-container {
+    .check-list-wrapper {
+      position: relative;
+    }
+    
+    .check-box-wrapper {
+      position: relative;
+      padding-left: 12px;
+      & > i.toggle-icon {
+        font-size: 18px;
+        position: absolute;
+        left: 2px;
+        top: 8px;
+      }
+      .checkbox__icon {
+          color: #4091f7;
+
+          &.partially-selected::after {
+            content: " ";
+            width: 9px;
+            height: 9px;
+            border: 1px solid;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            left: 4px;
+            top: 6px;
+        }
+      }
+    }
+  }

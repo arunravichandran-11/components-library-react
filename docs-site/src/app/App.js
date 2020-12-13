@@ -3,15 +3,17 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-do
 
 import './app.scss';
 
-import DrawerComponent from '@Components/Drawer';
-import ListComponent from '@Components/List/list';
-import ListItemLink from '@Components/List/list-item-link';
-import TooltipComponent from '@Components/Tooltip';
+import DrawerComponent from 'sample-react-lib-by-arun/lib/Drawer';
+import ListComponent from 'sample-react-lib-by-arun/lib/List/list';
+import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link';
+import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
 
 import AnimatedMultiSelectDemoPage from './demos/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import NestedTreeDemoPage from './demos/Nested-Tree';
+import TabsDemoPage from './demos/Tabs';
+
 import InstallationGuide from './Installation';
 
 class App extends React.Component { 
@@ -48,8 +50,9 @@ class App extends React.Component {
                     <div className="wrapper">
                         <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
                             <ListComponent>
+                                <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
                                 {/* <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} /> */}
-                                {/* <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} /> */}
+                                <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
                             </ListComponent>
@@ -73,6 +76,9 @@ class App extends React.Component {
                                 </Route>
                                 <Route path="/nested-tree">
                                     <NestedTreeDemoPage />
+                                </Route>
+                                <Route path="/tabs">
+                                    <TabsDemoPage />
                                 </Route>
                             </Switch>
                         </div>

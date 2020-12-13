@@ -3,7 +3,7 @@ import './installation.scss';
 import { NavLink } from 'react-router-dom';
 import CodeBlock from '../CodeBlock';
 
-import CheckboxExampleCode from '!raw-loader!../demos/Checkbox/Examples/SimpleCheckbox';
+import CheckboxExampleCode from '!raw-loader!./ExampleCode.md';
 
 const InstallationGuide = () => {
 

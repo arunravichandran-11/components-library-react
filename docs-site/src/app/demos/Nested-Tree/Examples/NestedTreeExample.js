@@ -1,7 +1,7 @@
 import React from 'react';
 import data from '../dataModel.json';
 import CodeBlock from '../../../CodeBlock';
-import NestedTree from '@Components/Multi-Select/NestedTree';
+import NestedTree from 'sample-react-lib-by-arun/lib/NestedTree';
 
 class NestedTreeExampleComponent extends React.Component {
 

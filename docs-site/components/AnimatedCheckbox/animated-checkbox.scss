@@ -10,6 +10,10 @@
     cursor: pointer;
 
     .checkbox-input {
+        display: block;
+    }
+
+    .checkbox-input {
         display: none;
     }
 
@@ -54,7 +58,7 @@
         padding-left: 16px;
     }
 
-    .check-box.show-child {
+    .check-box.show-child, .check-box.expand {
         span {
             position: absolute;
             top: 50%;
