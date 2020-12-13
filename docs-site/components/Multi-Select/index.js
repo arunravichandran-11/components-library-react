@@ -5,34 +5,81 @@ import PropTypes from 'prop-types';
 
 class MultiSelectComponent extends React.Component {  
     constructor(props){
-      super(props)
+      super(props);
+      this.selectedItem = {};
       this.state = {
         selectedOptions: {},
         selectedItems: {},
       }
     }
 
-    handleCheckListChange = (selectedOptions, selectedItems) => {
-      this.setState({selectedItems});
+    handleCheckListChange = (selectedItems, selectedOptions) => {
 
-      if(this.props.selectedItems) {
-        this.props.selectedItems({selectedItems});
+      console.log('selectedOptions', selectedOptions);
+      this.setState({
+        selectedItems : selectedItems
+      });
+
+      // if(this.props.selectedOptions) {
+      //   this.props.selectedItems({selectedOptions});
+      // }
+    }
+
+    formSelectedObj = (option, child) => {
+      let optionId = option.id;
+      // console.log('this.selectedItem', this.selectedItem);
+      if(this.selectedItem[option.id]) {
+        const filtered = Object.keys(this.selectedItem).reduce((object, key) => {
+          if (key !== optionId) {
+            object[key] = this.selectedItem[key]
+          }
+          return object
+        }, {});
+        this.selectedItem = filtered;
+      } else {
+  
+        console.log('this.selectedItem', this.selectedItem);
+        this.selectedItem = {
+          ...this.selectedItem,
+          [option.id] : {}
+        };
+  
+        if(child) {
+          this.selectedItem[option.id] = child;
+        }
       }
+  
+    }
+
+    setFlags = (data) => {
+      data.checked = data.indeterminate = false;
+
+      if(data.subOptions && data.subOptions.length > 0) {
+        data.subOptions.forEach(element => {
+          this.setFlags(element);
+        });
+      }
+
+      return data;
     }
     
     render() {
-      const {data, title, align} = this.props;
+      const { title, align} = this.props;
+
+      console.log('this.state', this.state.selectedItems);
       
+      const data = this.setFlags(this.props.data);
+
       return (
 
           <div className="multi-select-container">
              <h2 className="title">{title}</h2>
 
              <CheckboxList
-               options={data} 
-               align={align}
-               onSelect={this.handleCheckListChange}
-               selectedOptions={this.state.selectedItems} 
+                options={data.subOptions} 
+                align={align}
+                onSelect={this.handleCheckListChange}
+                selectedItem={this.state.selectedItems}
               />
            </div>
        )
@@ -40,7 +87,7 @@ class MultiSelectComponent extends React.Component {
 }  
 
 MultiSelectComponent.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.any,
   title: PropTypes.string,
   selectedItems: PropTypes.func,
 };

@@ -31,7 +31,7 @@ class MultiSelectDemoPage extends React.Component {
                 <ComponentRenderer title="Simple Select" codeBlock={SimpleMultiSelectExampleCode}>
                     <SimpleMultiSelectExample />
                 </ComponentRenderer>
-                <ComponentRenderer title="Nested Example" codeBlock={NestedMultiSelectExampleCode}>
+                {/* <ComponentRenderer title="Nested Example" codeBlock={NestedMultiSelectExampleCode}>
                     <NestedMultiSelectExample />
                 </ComponentRenderer>
                 <ComponentRenderer title="Nested" codeBlock={MixedMultiSelectExampleCode}>
@@ -39,7 +39,7 @@ class MultiSelectDemoPage extends React.Component {
                 </ComponentRenderer>
                 <ComponentRenderer title="Deeply Nested" codeBlock={DeeplyNestedMultiSelectExampleCode}>
                     <DeeplyNestedMultiSelectExample />
-                </ComponentRenderer>
+                </ComponentRenderer> */}
 
                 <PropsDescriptor properties={MultiSelectComponent.propTypes} />
 

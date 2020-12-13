@@ -3,7 +3,11 @@ import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
 
 import CodeBlock from '../../../CodeBlock';
 
-const languageTree = [
+const languageTree = {
+
+  id: 'Progs',
+  name: 'Category',
+  subOptions: [
   {
     name: "JavaScript",
     id: "JS-id",
@@ -34,7 +38,9 @@ const languageTree = [
     name: "GoLang",
     id: "go-id",
   },
-];
+
+  ]
+};
 
 class SimpleMultiSelectExample extends React.Component {
 

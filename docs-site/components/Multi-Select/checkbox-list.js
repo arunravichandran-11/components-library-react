@@ -20,7 +20,6 @@ class CheckboxList extends React.Component {
   }
 
 
-
   unSelectAllChild = (selectedObj) => {
     selectedObj.selected = 'none';
     selectedObj.subOptions.forEach((option) => {
@@ -61,10 +60,41 @@ class CheckboxList extends React.Component {
   //   this.props.onSelect(selObj, parent);
   // }
 
-  handleOnSelect(checkState, option) {
-    console.log('chec', option)
-    // let every = parent.subOptions.every((sub) => (sub.selected === 'selected'));
-    // let few = parent.subOptions.some((sub) => (sub.selected === 'selected'));
+  handleOnSelect = (selectedItem, parentObj) => {
+
+    console.log('jand', parentObj);
+    // if(parentObj && parentObj.subOptions && parentObj.subOptions.length > 0) {
+      let every = parentObj.subOptions.every((sub) => (sub.checked));
+      let few = parentObj.subOptions.some((sub) => (sub.checked));  
+    // }
+
+    console.log('eve', every, few);
+    if(every) {
+      parentObj.checked = true;
+      parentObj.indeterminate = false;
+    } else if(few) {
+      parentObj.checked = false;
+      parentObj.indeterminate = true;
+    } else {
+      parentObj.checked = false;
+      parentObj.indeterminate = false;
+    }
+    
+    console.log('receiived', selectedItem);
+    // this.formSelectedObj(parentObj, selectedItem);
+    if(parentObj) {
+      this.selectedItem = {
+        [parentObj.id]: selectedItem
+      }
+    } else {
+      // no child case
+      console.log('np child');
+    }
+    if(this.props.onSelect) {
+      console.log('pare', parentObj, this.selectedItem);
+      this.props.onSelect(this.selectedItem, parentObj);
+    }
+
     // parent.selected = every ? 'selected' : few ? 'partial' : 'none';
     // this.props.onSelect(selObj, parent);
   }
@@ -80,26 +110,29 @@ class CheckboxList extends React.Component {
   //   });
   // }
 
-  formSelectedObj = (option) => {
-
-
+  formSelectedObj = (option, child) => {
     let optionId = option.id;
+    // console.log('this.selectedItem', this.selectedItem);
     if(this.selectedItem[option.id]) {
-      var obj = {company: {}, model: {}, "Bike-id": {}};
-      //obj = this.selectedItem;
-      const { ...newobj } = obj;
-
-      console.log('dummy', newobj);
-
-      // const { optionId, ...newobj } = this.selectedItem;
-      // console.log('obj----->', optionId, newobj);
+      const filtered = Object.keys(this.selectedItem).reduce((object, key) => {
+        if (key !== optionId) {
+          object[key] = this.selectedItem[key]
+        }
+        return object
+      }, {});
+      this.selectedItem = filtered;
     } else {
+
+      console.log('Js - this.selectedItem', this.selectedItem);
       this.selectedItem = {
         ...this.selectedItem,
         [option.id] : {}
       };
-    }
 
+      if(child) {
+        this.selectedItem[option.id] = child;
+      }
+    }
 
   }
 
@@ -121,17 +154,17 @@ class CheckboxList extends React.Component {
   }
 
   handleSelected = (checkState, selectedOption, selectedSubOptions) => {
-    
     selectedOption.checked = checkState.checked;
     selectedOption.indeterminate = false;
     if(selectedSubOptions && selectedSubOptions.length > 0) {
       this.setAllChildSelected(selectedSubOptions, checkState.checked);
     }
 
-    console.log('select', selectedOption);
+    this.formSelectedObj(selectedOption, null);
 
+    console.log('res', this.selectedItem);
 
-    this.formSelectedObj(selectedOption, selectedOption)
+    this.props.onSelect(this.selectedItem, selectedOption);
 
     // this.props.onSelect(selectedObj, parent);
   }
@@ -145,6 +178,7 @@ class CheckboxList extends React.Component {
           
           {
               options.map((option, index) => {
+
                   return (
                           <div key={index}>
                               { 
@@ -154,9 +188,8 @@ class CheckboxList extends React.Component {
                                   checked={option.checked}
                                   label={option.name}
                                   value={option.name}
-                                  indeterminate={option.indeterminate}
+                                  // indeterminate={option.indeterminate}
                                   onChange={(checkState) => {
-                                    console.log('ise', checkState);
                                     this.handleSelected(checkState, option, option.subOptions);
                                   }} />
                               <div style={{padding: 2}}>
@@ -164,7 +197,7 @@ class CheckboxList extends React.Component {
                                     option.showChild && (
                                       <CheckboxList 
                                         options={option.subOptions} 
-                                        onSelect={(selectedObj) => this.handleOnSelect(selectedObj, onSelect, option)} />
+                                        onSelect={(selectedObj) => this.handleOnSelect(selectedObj, option)} />
                                     )
                                   }
                               </div>
