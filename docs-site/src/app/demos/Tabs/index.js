@@ -1,10 +1,16 @@
 import React from 'react';
 import ComponentRenderer from '../../ComponentRenderer';
 
-import MultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import Tabs from 'sample-react-lib-by-arun/lib/Tabs';
 
-import TabsExample from './Examples/SimpleExample';
-import TabsExampleCode from '!raw-loader!./Examples/SimpleExample.js';
+import ControlledTabsExample from './Examples/ControlledTabExample';
+import ControlledTabsExampleCode from '!raw-loader!./Examples/ControlledTabExample.js';
+
+import FullWidthTabExample from './Examples/FullWidthTabExample';
+import FullWidthTabsExampleCode from '!raw-loader!./Examples/FullWidthTabExample.js';
+
+import TabsWithoutBackdropExample from './Examples/WithoutBackdropExample';
+import TabsWithoutBackdropExampleCode from '!raw-loader!./Examples/WithoutBackdropExample.js';
 
 import PropsDescriptor from '../../PropsDescriptor';
 
@@ -15,11 +21,17 @@ class TabsDemoPage extends React.Component {
             <div>
                 <h2>Examples</h2>
                 <h3>Tabs Component</h3>
-                <p style={{background: '#f9f3f3',padding: 8}}>Please take a look at the data model mentioned at the bottom of the page</p>
-                <ComponentRenderer title="Simple Select" codeBlock={TabsExampleCode}>
-                    <TabsExample />
+                <p>Tabs Component allows the different set of organised contents within multiple tabs and allowed to navigate between them.</p>
+                <ComponentRenderer title="Controlled Tabs" codeBlock={ControlledTabsExampleCode}>
+                    <ControlledTabsExample />
                 </ComponentRenderer>
-                <PropsDescriptor properties={MultiSelectComponent.propTypes} />
+                <ComponentRenderer title="FullWidth Tabs" codeBlock={FullWidthTabsExampleCode}>
+                    <FullWidthTabExample />
+                </ComponentRenderer>
+                <ComponentRenderer title="Tab without backdrop" codeBlock={TabsWithoutBackdropExampleCode}>
+                    <TabsWithoutBackdropExample />
+                </ComponentRenderer>
+                <PropsDescriptor properties={Tabs.propTypes} />
             </div>
         )
     }

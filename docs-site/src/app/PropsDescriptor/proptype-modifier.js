@@ -11,7 +11,9 @@ const getPropInfo = (method) => {
     'string',
     'bool',
     'array',
-    'func'
+    'func',
+    'node',
+    'number'
   ];
 
   return availableProptypes.reduce((obj, curr) => {

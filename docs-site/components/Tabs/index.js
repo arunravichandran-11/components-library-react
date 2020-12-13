@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './tabs.scss';
 
@@ -53,13 +54,29 @@ class Tabs extends React.Component {
         );
     }
     render() {
+        const {fullWidth, withBackdrop } = this.props;
+
+        const rootContainerClassName = (`tab_container ${fullWidth && 'full-width'} ${withBackdrop && 'backdrop'}`).trim();
+
         return (
-            <div className="tab_container">
-                {this.renderTabItems()}
-                {this.renderContent()}
+            <div className={rootContainerClassName}>
+                <div className="tabs-wrapper">
+                    {this.renderTabItems()}
+                    {this.renderContent()}
+                </div>
 		    </div>
         )
     }
  }
+
+ Tabs.propTypes = {
+    fullWidth: PropTypes.bool,
+    selected: PropTypes.number,
+    withBackdrop: PropTypes.bool,
+    onChange: PropTypes.func,
+    label: PropTypes.string,
+    children: PropTypes.node
+ }
+
 
 export default Tabs;

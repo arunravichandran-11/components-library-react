@@ -51,7 +51,7 @@ class App extends React.Component {
                         <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
                             <ListComponent>
                                 <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
-                                <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} />
+                                {/* <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} /> */}
                                 <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />

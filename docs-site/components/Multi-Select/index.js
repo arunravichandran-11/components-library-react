@@ -1,6 +1,6 @@
 import React from 'react';
 import './multi-select.scss';
-import CheckboxList from '../Checkbox/checkbox-list';
+import CheckboxList from './checkbox-list';
 import PropTypes from 'prop-types';
 
 class MultiSelectComponent extends React.Component {  
