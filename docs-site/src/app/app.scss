@@ -58,24 +58,27 @@
         height: calc(100% - 56px);
         display: block;
 
-        .drawer-component-container {
-            .drawer-wrap {
-                z-index: 2;
-                @include mobile {
-                    // width: 0;
-                }
-
-                @include tablet {
-                    width: 200px;
-                    transform: translateX(0);
-                }
-
-                @include desktop {
-                    width: 280px;
-                    transform: translateX(0);
+        .left-pane {
+            .drawer-component-container {
+                .drawer-wrap {
+                    z-index: 2;
+                    @include mobile {
+                        // width: 0;
+                    }
+    
+                    @include tablet {
+                        width: 200px;
+                        transform: translateX(0);
+                    }
+    
+                    @include desktop {
+                        width: 280px;
+                        transform: translateX(0);
+                    }
                 }
             }
         }
+      
 
         .overlay {
             position: fixed;

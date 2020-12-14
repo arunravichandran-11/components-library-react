@@ -1,10 +1,4 @@
 .drawer-component-container {
-    &.open-drawer {
-        display: flex;
-        .drawer-wrap {
-            transform: translateX(0);
-        }
-    }
     .drawer-wrap {
         width: 280px;
         max-width: 280px;
@@ -23,6 +17,19 @@
             top: 0;
             left: 0;
         }
+        &.right {
+            top: 0;
+            left: auto;
+            right: 0;
+            transform: translateX(280px);
+        }
+        &.top {
+            height: 300px;
+            width: 100vw;
+            top: 0;
+            transform: translateY(-300px);
+            max-width: 100%;
+        }
         .header-icon {
             display: inline-block;
             height: 56px;
@@ -30,6 +37,20 @@
         }
     } 
     
+    &.open-drawer {
+        display: flex;
+        .drawer-wrap {
+            transform: translateX(0);
+        }
+        .drawer-wrap.right {
+            transform: none;
+        }
+        .drawer-wrap.top {
+            transform: translateY(0);
+        }
+
+    }
+
     .drawer-wrap {
         .list-container {
             .list {

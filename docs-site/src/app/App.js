@@ -13,6 +13,7 @@ import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import NestedTreeDemoPage from './demos/Nested-Tree';
 import TabsDemoPage from './demos/Tabs';
+import DrawerDemoPage from './demos/Drawer';
 
 import InstallationGuide from './Installation';
 
@@ -48,15 +49,18 @@ class App extends React.Component {
                         </a>
                     </header>
                     <div className="wrapper">
-                        <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
-                            <ListComponent>
-                                <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
-                                {/* <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} /> */}
-                                <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
-                                <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
-                                <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
-                            </ListComponent>
-                        </DrawerComponent>
+                        <div className="left-pane">
+                            <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
+                                <ListComponent>
+                                    <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
+                                    {/* <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} /> */}
+                                    <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
+                                    <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
+                                    <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
+                                    <ListItemLink label="Drawer" href="/drawer" onClick={this.toggleDrawer} />
+                                </ListComponent>
+                            </DrawerComponent>
+                        </div>
                         <div className={this.state.showDrawer ? 'overlay show' : 'overlay'} onClick={this.toggleDrawer} onClose={this.toggleDrawer}></div>
                         <div className="right-pane">
                             <Switch>
@@ -79,6 +83,9 @@ class App extends React.Component {
                                 </Route>
                                 <Route path="/tabs">
                                     <TabsDemoPage />
+                                </Route>
+                                <Route path="/drawer">
+                                    <DrawerDemoPage />
                                 </Route>
                             </Switch>
                         </div>
