@@ -1,5 +1,5 @@
 import React from 'react';
-import SimpleCheckbox from 'sample-react-lib-by-arun/lib/SimpleCheckbox';
+import SimpleCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/SimpleCheckbox';
 
 import CodeBlock from '../../../../CodeBlock';
 

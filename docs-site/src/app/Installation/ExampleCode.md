@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedCheckbox from 'sample-react-lib-by-arun/lib/AnimatedCheckbox';
+import AnimatedCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/AnimatedCheckbox';
 
 class CheckboxExample extends React.Component {
     render() {

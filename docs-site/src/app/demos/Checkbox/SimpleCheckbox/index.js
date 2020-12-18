@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PropsDescriptor from '../../../PropsDescriptor';
-import SimpleCheckbox from 'sample-react-lib-by-arun/lib/SimpleCheckbox';
+import SimpleCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/SimpleCheckbox';
 
 import UncontrolledSimpleCheckboxExample from './Examples/uncontrolled-checkbox';
 import UncontrolledSimpleCheckboxExampleCode from '!raw-loader!./Examples/uncontrolled-checkbox';

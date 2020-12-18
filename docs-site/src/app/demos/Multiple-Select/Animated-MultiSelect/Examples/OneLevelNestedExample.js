@@ -1,9 +1,9 @@
 import React from 'react';
-import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
+import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/AnimatedMultiSelect';
 
-import CodeBlock from '../../../CodeBlock';
+import CodeBlock from '../../../../CodeBlock';
 
-import VehiclesData from './nested-model.json';
+import VehiclesData from '../DataModel/nested-model.json';
 
 class OneLevelNestedExample extends React.Component {
 

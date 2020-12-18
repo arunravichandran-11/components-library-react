@@ -1,10 +1,12 @@
 import React from 'react';
 import ComponentRenderer from '../../ComponentRenderer';
+import NestedTree from 'sample-react-lib-by-arun/lib/NestedTree';
+import PropsDescriptor from '../../PropsDescriptor';
 
 import NestedTreeExampleComponent from './Examples/NestedTreeExample';
 import NestedTreeExampleComponentCode from '!raw-loader!./Examples/NestedTreeExample.js';
 
-import dataModel from './dataModel.json';
+import sampleDataModel from './DataModel/sample.json';
 import CodeBlock from '../../CodeBlock';
 
 
@@ -20,9 +22,11 @@ class NestedTreeDemoPage extends React.Component {
                     <NestedTreeExampleComponent />
                 </ComponentRenderer>
 
+                <PropsDescriptor properties={NestedTree.propTypes} />
+
                 <p className="short-notes">Note that the `id`, `name` and `subOptions` keys in the below object are used inside the component and so the component requests you to give the data with the same key names.</p>
                 <CodeBlock>
-                    <p>{JSON.stringify(dataModel, null, 4)}</p>                    
+                    <p>{JSON.stringify(sampleDataModel, null, 4)}</p>                    
                 </CodeBlock>
 
             </div>

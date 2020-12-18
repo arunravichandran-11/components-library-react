@@ -8,7 +8,7 @@ import ListComponent from 'sample-react-lib-by-arun/lib/List/list';
 import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link';
 import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
 
-import AnimatedMultiSelectDemoPage from './demos/Animated-MultiSelect';
+import AnimatedMultiSelectDemoPage from './demos/Multiple-Select/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import NestedTreeDemoPage from './demos/Nested-Tree';
@@ -51,10 +51,9 @@ class App extends React.Component {
                         <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
                             <ListComponent>
                                 <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
-                                {/* <ListItemLink label="MultiSelect" href="/select" onClick={this.toggleDrawer} /> */}
                                 <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
-                                <ListItemLink label="Animated MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
+                                <ListItemLink label="MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
                             </ListComponent>
                         </DrawerComponent>
                         <div className={this.state.showDrawer ? 'overlay show' : 'overlay'} onClick={this.toggleDrawer} onClose={this.toggleDrawer}></div>

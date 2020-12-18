@@ -11,7 +11,6 @@ class AnimatedCheckbox extends React.Component {
     handleClick = (event) => {
         if(this.props.onChange) {
             if(this.props.checkState === undefined) {
-                // change state locally
                 const localState = {
                     checked: !this.state.checked,
                     checkState: this.state.checked ? 'un-checked' : 'checked'
@@ -26,7 +25,6 @@ class AnimatedCheckbox extends React.Component {
                 }
             }
         } else {
-            // no onchange - so local state.... check for checkd and checkState as well
             if(this.props.checkState === undefined) {
                 const localState = {
                     checked: !this.state.checked,

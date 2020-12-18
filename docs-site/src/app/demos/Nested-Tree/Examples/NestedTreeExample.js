@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../dataModel.json';
+import data from '../DataModel/sample.json';
 import CodeBlock from '../../../CodeBlock';
 import NestedTree from 'sample-react-lib-by-arun/lib/NestedTree';
 

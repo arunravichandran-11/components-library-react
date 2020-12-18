@@ -1,11 +1,18 @@
 .nested-tree-container {
     .check-list-wrapper {
       position: relative;
+
+      & {
+        .check-box-wrapper.horizontal {
+          display: inline-block;
+        }
+      }
     }
     
     .check-box-wrapper {
       position: relative;
       padding-left: 12px;
+
       & > i.toggle-icon {
         font-size: 18px;
         position: absolute;
