@@ -1,3 +1,4 @@
+
 .nested-tree-container {
     .check-list-wrapper {
       position: relative;
@@ -20,7 +21,7 @@
         top: 8px;
       }
       .checkbox__icon {
-          color: #4091f7;
+          color: var(--primaryBg, #4091f7);
 
           &.partially-selected::after {
             content: " ";

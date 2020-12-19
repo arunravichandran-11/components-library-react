@@ -1,0 +1,27 @@
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+// html {
+//     --primaryBg: #571845;
+// }
+
+html[data-theme="dark-blue"] {
+  --primaryBg: #500ad2;
+}
+
+html[data-theme="light-blue"] {
+  --primaryBg: #27b3e1;
+}
+
+html[data-theme="light-green"] {
+  --primaryBg: #90ee90;
+}
+
+html[data-theme="purple"] {
+    --primaryBg: #571845;
+}
