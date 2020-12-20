@@ -1,7 +1,5 @@
 import React from 'react';
-import SimpleCheckbox from 'sample-react-lib-by-arun/lib/SimpleCheckbox';
-
-import CodeBlock from '../../../../CodeBlock';
+import SimpleCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/SimpleCheckbox';
 
 class ControlledSimpleCheckboxExample extends React.Component {
 

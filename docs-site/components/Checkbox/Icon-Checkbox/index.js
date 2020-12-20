@@ -1,9 +1,14 @@
 import React from 'react';
-// import '../Checkbox/checkbox.scss';
 import PropTypes from 'prop-types';
 var classNames = require('classnames');
 
-class CheckBox extends React.Component {
+class IconCheckBox extends React.Component {
+
+    STATES = {
+        'SELECTED': 'fa-check-square-o',
+        'PARTIAL': 'fa-square-o partially-selected',
+        'NONE': 'fa-square-o',
+    };
 
     /**
      * toggles the check and uncheck state of this component.
@@ -12,20 +17,19 @@ class CheckBox extends React.Component {
      */
     handleClick = (event) => {
         if(this.props.onCheck) {
-            this.props.onCheck(this.props.selected, this.props.option);
+            this.props.onCheck(this.props.checkedstate);
         }
     };
 
     render() {
 
-        const { selected, label, align, hasChild } = this.props;
-        const checkboxClass = ((selected === 'selected' || selected === true) ? 'fa-check-square-o' : (selected === 'partial') ? 'fa-square-o partially-selected':'fa-square-o');
-
+        const { checkedstate, label, align } = this.props;
+        const checkboxClass = this.STATES[checkedstate.toUpperCase()] || this.STATES['NONE'];
         const containerClass = (`checkbox ${align || ''}`).trim();
 
         return (
             <div className={containerClass}>
-                {!hasChild && <div className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} onClick={this.handleClick}></div>}
+                <div className={classNames('fa', 'fa-2x', 'checkbox__icon', checkboxClass)} onClick={this.handleClick}></div>
                 <div className="checkbox__label">{label}</div>
             </div>
         )
@@ -33,14 +37,15 @@ class CheckBox extends React.Component {
 
   }
 
-  CheckBox.propTypes = {
-    selected: PropTypes.any,
+  IconCheckBox.defaultProps = {
+    checkedstate: 'none'
+  }
+
+  IconCheckBox.propTypes = {
+    // checkedstate: PropTypes.oneOf(['selected', 'partial', 'none']),
+    checkedstate: PropTypes.string,
     label: PropTypes.string,
     onCheck: PropTypes.func,
-    onUnselect: PropTypes.func,
-    allSelected: PropTypes.bool, 
-    isPartiallySelected: PropTypes.bool,
-    hasChild: PropTypes.bool
   };
 
-  export default CheckBox;
+  export default IconCheckBox;

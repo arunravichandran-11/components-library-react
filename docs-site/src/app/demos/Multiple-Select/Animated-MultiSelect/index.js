@@ -1,6 +1,6 @@
 import React from 'react';
-import ComponentRenderer from '../../ComponentRenderer';
-import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select';
+import ComponentRenderer from '../../../ComponentRenderer';
+import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/AnimatedMultiSelect';
 
 import AnmatedMultiSelectExample from './Examples/NestedMultipleExample';
 import AnmatedMultiSelectExampleCode from '!raw-loader!./Examples/NestedMultipleExample.js';
@@ -15,9 +15,9 @@ import ExampleWithNoData from './Examples/ExampleWithNoData';
 import ExampleWithNoDataCode from '!raw-loader!./Examples/ExampleWithNoData';
 
 
-import PropsDescriptor from '../../PropsDescriptor';
-import dataModel from './dataModel.json';
-import CodeBlock from '../../CodeBlock';
+import PropsDescriptor from '../../../PropsDescriptor';
+import dataModel from './DataModel/dataModel.json';
+import CodeBlock from '../../../CodeBlock';
 
 
 class AnimatedMultiSelectDemoPage extends React.Component {
