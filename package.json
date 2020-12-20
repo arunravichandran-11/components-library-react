@@ -1,6 +1,6 @@
 {
   "name": "sample-react-lib-by-arun",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "A sample library with react component that can be integrated with reactjs application",
   "main": "./lib/",
   "keywords": [

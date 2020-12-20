@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckboxComponent from 'sample-react-lib-by-arun/lib/Checkbox';
-import SimpleCheckbox from 'sample-react-lib-by-arun/lib/SimpleCheckbox'; 
+import SimpleCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/SimpleCheckbox'; 
 
 class CheckboxList extends React.Component {
 
