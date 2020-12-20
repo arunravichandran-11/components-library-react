@@ -9,8 +9,7 @@
   ],
   "private": false,
   "scripts": {
-    "build": "webpack",
-    "ready": "babel docs-site/components -d lib --copy-files"
+    "tag": "./tag_creation.sh"
   },
   "peerDependencies": {
     "classnames": "^15.6.0",
