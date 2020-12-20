@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PropsDescriptor from '../../../PropsDescriptor';
-import AnimatedCheckbox from 'sample-react-lib-by-arun/lib/AnimatedCheckbox';
+import AnimatedCheckbox from 'sample-react-lib-by-arun/lib/Checkbox/AnimatedCheckbox';
 
 import UncontrolledAnimatedCheckboxExample from './Examples/uncontrolled-checkbox';
 import UncontrolledAnimatedCheckboxExampleCode from '!raw-loader!./Examples/uncontrolled-checkbox';

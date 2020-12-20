@@ -2,6 +2,8 @@ import React from 'react';
 import CodeBlock from '../CodeBlock';
 import './component-renderer.scss';
 import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
+import HeaderBar from 'sample-react-lib-by-arun/lib/HeaderBar';
+
 
 class ComponentRenderer extends React.Component {
 
@@ -31,16 +33,26 @@ class ComponentRenderer extends React.Component {
         return (
             <div style={rootElementStyle} className="component-renderer-root">
                 <div className={showBlockClassName}>
-                    <header>
+
+                <HeaderBar 
+                    title={this.props.title}
+                    rightMenu={
+                        <div onClick={this.expandCodeBlock} className="icon-button">
+                            <i className="fa fa-code" aria-hidden="true"></i>
+                            <TooltipComponent position="top" text="Source Code"/>
+                        </div>
+                    }
+                />
+                    
+                                        {/* <header>
                         <div>{this.props.title}</div>
                         <div>
                             <div onClick={this.expandCodeBlock} className="icon-button">
                                 <i className="fa fa-code" aria-hidden="true"></i>
                                 <TooltipComponent position="top" text="Source Code"/>
                             </div>
-                            {/* <span>Click to expand</span> */}
                         </div>
-                    </header>
+                    </header> */}
                     <div className={showClassName}>
                         <CodeBlock>
                             {this.props.codeBlock}

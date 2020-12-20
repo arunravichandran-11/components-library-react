@@ -4,12 +4,26 @@ import './tooltip.scss';
 class TooltipComponent extends React.Component {
 
     render() {
-        const {position, text} = this.props;
+        const {position, text, children} = this.props;
 
         return (
             <div className="tooltip-container">
-                <div className="hover-element"></div>
-                <span className={`tooltip tooltip__${position || 'bottom'}`}>{text || 'Tooltip! Please Provide the text'}</span>
+                <div className="hover-element">
+                {
+                    children && (
+                        <div className={`tooltip tooltip__${position || 'bottom'}`}>
+                            {children}
+                        </div>
+                    )
+                }
+                </div>
+                {
+                    text && (
+                        <span className={`tooltip tooltip__${position || 'bottom'}`}>
+                            {text || 'Tooltip! Please Provide the text'}
+                        </span>
+                    )
+                }
             </div>
         );
     }

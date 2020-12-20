@@ -1,9 +1,9 @@
 import React from 'react';
-import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/Animated';
+import AnimatedMultiSelectComponent from 'sample-react-lib-by-arun/lib/Multi-Select/AnimatedMultiSelect';
 
-import CodeBlock from '../../../CodeBlock';
+import CodeBlock from '../../../../CodeBlock';
 
-import bikesTree from './data-model.json';
+import bikesTree from '../DataModel/data-model.json';
 
 class AnmatedMultiSelectExampleSimple extends React.Component {
 

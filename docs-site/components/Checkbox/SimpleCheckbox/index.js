@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, string, func } from 'prop-types';
-import  './checkbox.scss';
+import  './simple-checkbox.scss';
 
 class SimpleCheckbox extends React.Component {
 
