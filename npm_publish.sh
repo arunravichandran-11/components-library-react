@@ -13,12 +13,8 @@ function publish_to_npm {
     then
         echo "Please switch to corresponding tag before publishing to npm"
     else
-
-    # git describe --exact-match --tags $(git log -n1 --pretty='%h')
-    # git describe --tags
-
-    # checkout to tag
-    git checkout $tagVersion
+    # checkout to tag - need this later
+    # git checkout $tagVersion
     
     # Now latest tag version is switched and new code is there. So Switch to doc-site
     cd ./docs-site/
