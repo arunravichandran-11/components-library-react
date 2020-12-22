@@ -25,7 +25,7 @@ Drawer.defaultProps = {
 
 Drawer.propTypes = {
     fixed: PropTypes.bool,
-    open: PropTypes.bool.isRequired,
+    open: PropTypes.bool,
     children: PropTypes.node,
     align: PropTypes.string
 }

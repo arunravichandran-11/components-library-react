@@ -4,25 +4,31 @@
 module.exports = {
   rules: [
     {
-      // test: /\.s[ac]ss$/i,
       test: /\.s?css$/,
       use: [
-        {
-          loader: 'style-loader'
-        },
-        {
-          loader: 'css-loader',
-          // include: ['node_modules'],
-          options: {
-            import: true,
-          },
-        },
-        {
-          loader: 'sass-loader',
-          options: {},
-        },
+        'style-loader', // Creates `style` nodes from JS strings
+        'css-loader', // Translates CSS into CommonJS
+        'sass-loader',
       ],
     },
+    // {
+    //   test: /\.s?css$/,
+    //   use: [
+    //     {
+    //       loader: 'style-loader'
+    //     },
+    //     {
+    //       loader: 'css-loader',
+    //       options: {
+    //         import: true,
+    //       },
+    //     },
+    //     {
+    //       loader: 'sass-loader',
+    //       options: {},
+    //     },
+    //   ],
+    // },
   ],
   plugins: [
     // new MiniCssExtractPlugin({

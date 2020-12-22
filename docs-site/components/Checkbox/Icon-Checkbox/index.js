@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 var classNames = require('classnames');
-import '../checkbox.scss';
+import './checkbox.scss';
 
 class IconCheckBox extends React.Component {
 
