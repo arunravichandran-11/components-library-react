@@ -9,7 +9,7 @@
   ],
   "private": false,
   "scripts": {
-    "tag": "./tag_creation.sh"
+    "tag": "tag_creation.sh"
   },
   "peerDependencies": {
     "classnames": "^15.6.0",

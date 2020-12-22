@@ -45,6 +45,8 @@ function create_tag {
     git branch -d $releaseBranch
     echo "Deleted Release Branch"
 
+   # Push tag
+   git push --tags
 }
 
 if [ $branch == $devBranch ]
