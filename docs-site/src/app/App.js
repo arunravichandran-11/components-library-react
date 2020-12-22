@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-do
 
 import './app.scss';
 
-import DrawerComponent from 'sample-react-lib-by-arun/lib/Drawer';
+import Drawer from 'sample-react-lib-by-arun/lib/Drawer';
 import ListComponent from 'sample-react-lib-by-arun/lib/List/list';
 import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link';
 import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
@@ -13,6 +13,8 @@ import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
 import NestedTreeDemoPage from './demos/Nested-Tree';
 import TabsDemoPage from './demos/Tabs';
+import DrawerDemoPage from './demos/Drawer';
+import ListDemoPage from './demos/List';
 
 import HeaderBar, {SubHeader} from 'sample-react-lib-by-arun/lib/HeaderBar';
 
@@ -112,14 +114,16 @@ class App extends React.Component {
                     </HeaderBar>
 
                     <div className="wrapper">
-                        <DrawerComponent fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
+                        <Drawer fixed={(window.innerWidth > 1024)} open={this.state.showDrawer} onClose={(event) => this.setState({showDrawer: false})}>
                             <ListComponent>
                                 <ListItemLink label="Tabs" href="/tabs" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Checkbox" href="/checkbox" onClick={this.toggleDrawer} />
                                 <ListItemLink label="Nested Tree" href="/nested-tree" onClick={this.toggleDrawer} />
                                 <ListItemLink label="MultiSelect" href="/multi-select" onClick={this.toggleDrawer} />
+                                <ListItemLink label="Drawer" href="/drawer" onClick={this.toggleDrawer} />
+                                <ListItemLink label="List" href="/list" onClick={this.toggleDrawer} />
                             </ListComponent>
-                        </DrawerComponent>
+                        </Drawer>
                         <div className={this.state.showDrawer ? 'overlay show' : 'overlay'} onClick={this.toggleDrawer} onClose={this.toggleDrawer}></div>
                         <div className="right-pane">
                             <Switch>
@@ -142,6 +146,12 @@ class App extends React.Component {
                                 </Route>
                                 <Route path="/tabs">
                                     <TabsDemoPage />
+                                </Route>
+                                <Route path="/drawer">
+                                    <DrawerDemoPage />
+                                </Route>
+                                <Route path="/list">
+                                    <ListDemoPage />
                                 </Route>
                             </Switch>
                         </div>
