@@ -1,4 +1,50 @@
 .drawer-component-container {
+    &.right {
+        .drawer-wrap {
+            top: 0;
+            right: 0;
+            left: auto;
+            transform: translateX(300px);
+            .header-icon {
+                float: right;
+            }
+        }
+    }
+    &.left {
+        .drawer-wrap {
+            top: 0;
+            left: 0;
+            right: auto;
+            .header-icon {
+                float: left;
+            }
+        }
+    }
+    &.top {
+        .drawer-wrap {
+            height: 280px;
+            max-height: 220px;
+            max-width: inherit;
+            width: 100%;
+            transform: translateX(none);
+            transform: translateY(-280px);
+        }
+    }
+    &.bottom {
+        .drawer-wrap {
+            height: 280px;
+            max-height: 220px;
+            max-width: inherit;
+            width: 100%;
+            top: auto;
+            bottom: 0;
+            transform: translateX(none);
+            transform: translateY(280px);
+            .header-icon {
+                float: right;
+            }
+        }
+    }
     &.open-drawer {
         display: flex;
         .drawer-wrap {
@@ -13,19 +59,12 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 4;
         overflow: hidden;
-        // background-color: #500ad2;
-        // background-image: linear-gradient(180deg,rgba(255,255,255,.18) 0,rgba(0,0,0,.18) 100%);
         background-color: var(--primaryBg, #500ad2);
         background-image: var(--primaryBgImage, linear-gradient(180deg,rgba(255,255,255,.18) 0,rgba(0,0,0,.18) 100%));
-
         transition: all 0.1s linear;
-        z-index: 2;
         height: 100%;
-        &.left {
-            top: 0;
-            left: 0;
-        }
         .header-icon {
             display: inline-block;
             height: 56px;
@@ -35,6 +74,7 @@
     
     .drawer-wrap {
         .list-container {
+            border: none;
             .list {
                 .list-item {
                     a {

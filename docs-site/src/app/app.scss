@@ -54,7 +54,7 @@
         height: calc(100% - 56px);
         display: block;
 
-        .drawer-component-container {
+        & > .drawer-component-container {
             .drawer-wrap {
                 z-index: 2;
                 @include mobile {
