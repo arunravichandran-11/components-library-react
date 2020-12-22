@@ -1,15 +1,16 @@
 import React from 'react';
 import './drawer.scss';
+import PropTypes from 'prop-types';
 
-class DrawerComponent extends React.Component {
+class Drawer extends React.Component {
 
     render() {
-        const {fixed, open, children} = this.props;
-        const rootElementClass = (`drawer-component-container ${fixed && 'fixed-drawer'} ${open && 'open-drawer'}`).trim();
+        const {fixed, open, children, align} = this.props;
+        const rootElementClass = (`drawer-component-container ${fixed && 'fixed-drawer'} ${open && 'open-drawer'} ${align || ''}`).trim();
 
         return (
             <div className={rootElementClass}>
-                <div className="drawer-wrap">
+                <div className={`drawer-wrap`}>
                     <a className="header-icon" onClick={(event) => this.props.onClose(event)}><i className="fa fa-2x fa-close"></i></a>
                     {children}
                 </div>
@@ -18,8 +19,15 @@ class DrawerComponent extends React.Component {
     }
 }
 
-DrawerComponent.defaultProps = {
+Drawer.defaultProps = {
     fixed: false
 }
 
-export default DrawerComponent;
+Drawer.propTypes = {
+    fixed: PropTypes.bool,
+    open: PropTypes.bool.isRequired,
+    children: PropTypes.node,
+    align: PropTypes.string
+}
+
+export default Drawer;

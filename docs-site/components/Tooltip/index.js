@@ -8,7 +8,7 @@ class TooltipComponent extends React.Component {
 
         return (
             <div className="tooltip-container">
-                <div className="hover-element">
+                <div className="hover-element"></div>
                 {
                     children && (
                         <div className={`tooltip tooltip__${position || 'bottom'}`}>
@@ -16,7 +16,6 @@ class TooltipComponent extends React.Component {
                         </div>
                     )
                 }
-                </div>
                 {
                     text && (
                         <span className={`tooltip tooltip__${position || 'bottom'}`}>

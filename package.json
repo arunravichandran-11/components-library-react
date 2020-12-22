@@ -1,6 +1,6 @@
 {
   "name": "sample-react-lib-by-arun",
-  "version": "0.8.6",
+  "version": "0.9.0",
   "description": "A sample library with react component that can be integrated with reactjs application",
   "main": "./lib/",
   "keywords": [
@@ -9,8 +9,8 @@
   ],
   "private": false,
   "scripts": {
-    "build": "webpack",
-    "ready": "babel docs-site/components -d lib --copy-files"
+    "tag": "tag_creation.sh",
+    "publish": "npm_publish.sh"
   },
   "peerDependencies": {
     "classnames": "^15.6.0",
