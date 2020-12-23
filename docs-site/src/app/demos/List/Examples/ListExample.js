@@ -18,11 +18,27 @@ class DrawerExample extends React.Component {
                 </ListComponent>
 
                 <ListComponent>
-                    <ListItemComponent label="Tabs" />
-                    <ListItemComponent label="Checkbox" />
-                    <ListItemComponent label="Nested Tree" />
+                    <ListItemComponent label="Email" leftIcon={<i className="fa fa-1x fa-envelope"></i>} />
+                    <ListItemComponent label="Envelope" leftIcon={<i className="fa fa-1x fa-envelope-o"></i>} />
+                    <ListItemComponent label="Share" leftIcon={<i className="fa fa-1x fa-share"></i>} />
+                    <ListItemComponent label="Inbox" leftIcon={<i className="fa fa-1x fa-inbox"></i>} />
+                    {/* <ListItemComponent label="Nested Tree" />
                     <ListItemComponent label="MultiSelect" />
-                    <ListItemComponent label="Drawer" />
+                    <ListItemComponent label="Drawer" /> */}
+                </ListComponent>
+
+                <ListComponent>
+                    <ListItemComponent label="Email" rightIcon={<i className="fa fa-1x fa-envelope"></i>} />
+                    <ListItemComponent label="Envelope" rightIcon={<i className="fa fa-1x fa-envelope-o"></i>} />
+                    <ListItemComponent label="Share" rightIcon={<i className="fa fa-1x fa-share"></i>} />
+                    <ListItemComponent label="Inbox" rightIcon={<i className="fa fa-1x fa-inbox"></i>} />
+                    <ListItemComponent label="Email" rightIcon={<i className="fa fa-1x fa-envelope"></i>} />
+                    <ListItemComponent label="Envelope" rightIcon={<i className="fa fa-1x fa-envelope-o"></i>} />
+                    <ListItemComponent label="Share" rightIcon={<i className="fa fa-1x fa-share"></i>} />
+                    <ListItemComponent label="Inbox" rightIcon={<i className="fa fa-1x fa-inbox"></i>} />
+                    {/* <ListItemComponent label="Nested Tree" />
+                    <ListItemComponent label="MultiSelect" />
+                    <ListItemComponent label="Drawer" /> */}
                 </ListComponent>
 
                 <ListComponent>

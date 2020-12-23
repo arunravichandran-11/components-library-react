@@ -11,10 +11,10 @@ const getRows = propTypes => Object.keys(propTypes).map(prop => (
   </tr>
 ));
 
-const PropTableComponent = ({ propTypes, notes }) => {
+const PropTableComponent = ({ propTypes, notes, label }) => {
     return (
       <div className="props-table-container">
-        <h2>Component Props</h2>
+        <h2>{label || 'Component Props'}</h2>
         <table>
           <thead>
             <tr>

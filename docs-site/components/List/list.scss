@@ -2,6 +2,7 @@
     min-width: 220px;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
+    height: fit-content;
     .list {
         margin: 0;
         list-style: none;
@@ -24,9 +25,28 @@
                 width: 100%;
                 box-sizing: border-box;
                 letter-spacing: 0.5;
+
+                &.has-left-icon {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                &.has-right-icon {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
             }
+            
             &:hover {
                 background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .left-icon-container {
+                margin-right: 16px;
+            }
+            .right-icon-container {
+                margin-left: 16px;
             }
         }
     }
