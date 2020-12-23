@@ -1,6 +1,9 @@
 import React from 'react';
 import ComponentRenderer from '../../ComponentRenderer';
-// import List from 'sample-react-lib-by-arun/lib/List';
+import ListComponent from 'sample-react-lib-by-arun/lib/List/list';
+import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link';
+import ListItemComponent from 'sample-react-lib-by-arun/lib/List/list-item';
+
 import PropsDescriptor from '../../PropsDescriptor';
 
 import ListExample from './Examples/ListExample';
@@ -19,8 +22,9 @@ class ListDemoPage extends React.Component {
                     <ListExample />
                 </ComponentRenderer>
 
-                {/* <PropsDescriptor properties={List.propTypes} /> */}
-
+                <PropsDescriptor properties={ListComponent.propTypes} label="List Props" />
+                <PropsDescriptor properties={ListItemComponent.propTypes} label="ListItem Props" />
+                <PropsDescriptor properties={ListItemLink.propTypes} label="List Item Link Props" />
             </div>
         )
     }

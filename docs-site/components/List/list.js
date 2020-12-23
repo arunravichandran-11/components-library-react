@@ -1,5 +1,6 @@
 import React from 'react';
 import './list.scss';
+import PropTypes from 'prop-types';
 
 class ListComponent extends React.Component {
     render() {
@@ -11,6 +12,10 @@ class ListComponent extends React.Component {
             </div>       
         )
     }
+}
+
+ListComponent.propTypes = {
+    children: PropTypes.node
 }
 
 export default ListComponent;

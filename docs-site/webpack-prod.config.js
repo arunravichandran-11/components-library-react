@@ -25,6 +25,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     alias: {
       // 'sample-react-lib-by-arun/lib': [path.resolve(__dirname, 'node_modules/sample-react-lib-by-arun/lib')]
+      // 'sample-react-lib-by-arun/lib': [path.resolve(__dirname, 'components/')]
     },
   },
   output: {

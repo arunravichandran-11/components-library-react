@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ListItemLink extends React.Component {
 
@@ -13,6 +14,12 @@ class ListItemLink extends React.Component {
             </li>
         )
     }
+}
+
+ListItemLink.propTypes = {
+    href: PropTypes.string, 
+    label: PropTypes.string, 
+    onClick: PropTypes.func
 }
 
 export default ListItemLink;
