@@ -1,6 +1,5 @@
 const express = require('express');
 const { func } = require('prop-types');
-
 const app = express();
 
 app.use(express.static('dist'))
