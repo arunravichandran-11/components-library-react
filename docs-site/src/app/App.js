@@ -18,8 +18,7 @@ import ListDemoPage from './demos/List';
 
 import HeaderBar, {SubHeader} from 'sample-react-lib-by-arun/lib/HeaderBar'
 
-import InstallationGuide from './Installation';
-
+import InstallationGuide from './Installation'
 
 import { renderTheme, setTheme } from 'sample-react-lib-by-arun/lib/themes';
 

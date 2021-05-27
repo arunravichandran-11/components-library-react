@@ -17,7 +17,7 @@
   "private": false,
   "scripts": {
     "tag": "tag_creation.sh",
-    "lint": "eslint ./docs-site/src/app/App.js"
+    "lint": "eslint"
   },
   "peerDependencies": {
     "classnames": "^15.6.0",
