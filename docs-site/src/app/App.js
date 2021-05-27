@@ -5,8 +5,8 @@ import './app.scss';
 
 import Drawer from 'sample-react-lib-by-arun/lib/Drawer';
 import ListComponent from 'sample-react-lib-by-arun/lib/List/list';
-import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link';
-import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
+import ListItemLink from 'sample-react-lib-by-arun/lib/List/list-item-link'
+import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip'
 
 import AnimatedMultiSelectDemoPage from './demos/Multiple-Select/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
