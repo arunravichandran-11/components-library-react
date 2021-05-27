@@ -24,7 +24,7 @@ import InstallationGuide from './Installation';
 
 import { renderTheme, setTheme } from 'sample-react-lib-by-arun/lib/themes';
 
-class App extends React.Component { 
+class App extends React.Component {
 
     state = {
         showDrawer: false,
@@ -104,10 +104,10 @@ class App extends React.Component {
                         </a>
                     </header> */}
 
-                    <HeaderBar 
+                    <HeaderBar
                             title="React Library"
                             className="app-header"
-                            leftMenu={this.renderLeftMenu()} 
+                            leftMenu={this.renderLeftMenu()}
                             rightMenu={this.renderRightMenu()}
                             showSubheader={false}
                     >
