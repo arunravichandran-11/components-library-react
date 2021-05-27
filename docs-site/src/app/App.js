@@ -16,8 +16,7 @@ import TabsDemoPage from './demos/Tabs';
 import DrawerDemoPage from './demos/Drawer';
 import ListDemoPage from './demos/List';
 
-import HeaderBar, {SubHeader} from 'sample-react-lib-by-arun/lib/HeaderBar';
-
+import HeaderBar, {SubHeader} from 'sample-react-lib-by-arun/lib/HeaderBar'
 
 import InstallationGuide from './Installation';
 
