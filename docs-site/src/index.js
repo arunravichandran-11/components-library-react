@@ -4,7 +4,7 @@ import App from './app/App';
 import './index.scss';
 
 var a = 'welkgnewl';
-console.log(a);
+console.log(a); 
 ReactDOM.render(
     <App />,
     document.getElementById('root')
