@@ -8,15 +8,16 @@
     "react-router-dom"
   ],
   "lint-staged": {
-   "*.js": [
-     "eslint --fix",
-     "git add",
-     "jest --bail --findRelatedTests"
-   ]
+    "*.js": [
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
   },
   "private": false,
   "scripts": {
-    "tag": "tag_creation.sh"
+    "tag": "tag_creation.sh",
+    "lint": "eslint"
   },
   "peerDependencies": {
     "classnames": "^15.6.0",
@@ -27,5 +28,7 @@
   "author": "Arun",
   "license": "ISC",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^7.27.0"
+  }
 }
