@@ -11,7 +11,7 @@ import TooltipComponent from 'sample-react-lib-by-arun/lib/Tooltip';
 import AnimatedMultiSelectDemoPage from './demos/Multiple-Select/Animated-MultiSelect';
 import MultiSelectDemoPage from './demos/Multi-Select';
 import CheckboxDemoPage from './demos/Checkbox';
-import NestedTreeDemoPage from './demos/Nested-Tree';
+import NestedTreeDemoPage from './demos/Nested-Tree'
 import TabsDemoPage from './demos/Tabs'
 import DrawerDemoPage from './demos/Drawer';
 import ListDemoPage from './demos/List'
